@@ -4,11 +4,11 @@ project:
 
 
 website:
-  title: "Society of Cutaneous Oncology Journal Club"
+  title: ""
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Society of Cutaneous Oncology Journal Club
       - text: Perspectives on the Science
         href: https://journalofcutaneousoncology.io
         target: _blank

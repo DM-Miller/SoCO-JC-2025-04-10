@@ -89,12 +89,18 @@ Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
 
 <div class="scroll-content">
 <!-- Hidden heading for accessibility -->
-<h1 style="position: absolute; left: -9999px;">Advancing Skin Cancer Care Through Clinical Trials and Informatics</h1>
+<h1 style="position: absolute; left: -9999px;">Society of Cutaneous Oncology Journal Club April 10, 2025</h1>
 
 <div class="fade-in" id="overview">
-# Overview
+# Agenda
 
-Our research portfolio spans clinical trials and translational research in skin cancer. The Miller Lab’s long-term goal is to develop novel therapies for advanced skin cancer and to uncover mechanisms of treatment response and resistance. Dr. Miller leads several clinical trials in Merkel Cell Carcinoma and Cutaneous Squamous Cell Carcinoma at the Mass General Cancer Center, evaluating new treatment strategies in the neoadjuvant, adjuvant, and refractory settings. To complement these efforts, our lab is building clinical informatics platforms to enhance real-world data capture and analysis.
+1. Brief Introductions
+2. Perspectives on the Science
+3. SoCo JC Timeline
+4. Pre-JC Survey
+5. Main Paper
+6. Post-JC Surbey
+
 </div>
 
 </div>
