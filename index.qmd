@@ -1,7 +1,143 @@
 ---
-title: "April 10th 2025 - Ipi-Nivo for MCC - results from Checkmate 358"
+page-layout: full
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<style>
+  .hero-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('/files/millerlab_touchdown_page_hero.png') center center / cover no-repeat;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .hero-title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    z-index: 1;
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+    animation: fadeSlideDown 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+
+  @keyframes fadeSlideDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+.scroll-content {
+  margin-top: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 0.75rem;
+  max-width: min(95vw, 1200px);
+  background: white;
+  border-radius: 0.75rem 0.75rem 0 0; 
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+ /* Fade-in effect for listings */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 600px) {
+    .scroll-content {
+      padding: 2rem 1rem;
+      max-width: 95vw;
+    }
+    .hero-title {
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+  }
+  
+</style>
+
+<div class="hero-container" id="hero-bg"></div>
+<h1 class="hero-title" id="hero-title">Advancing Skin Cancer Care Through Clinical Trials and Informatics</h1>
+
+<div class="scroll-content">
+<!-- Hidden heading for accessibility -->
+<h1 style="position: absolute; left: -9999px;">Advancing Skin Cancer Care Through Clinical Trials and Informatics</h1>
+
+<div class="fade-in" id="overview">
+# Overview
+
+Our research portfolio spans clinical trials and translational research in skin cancer. The Miller Lab’s long-term goal is to develop novel therapies for advanced skin cancer and to uncover mechanisms of treatment response and resistance. Dr. Miller leads several clinical trials in Merkel Cell Carcinoma and Cutaneous Squamous Cell Carcinoma at the Mass General Cancer Center, evaluating new treatment strategies in the neoadjuvant, adjuvant, and refractory settings. To complement these efforts, our lab is building clinical informatics platforms to enhance real-world data capture and analysis.
+</div>
+
+</div>
+
+<script>
+  // Scroll-based fade of hero banner
+  window.addEventListener('scroll', () => {
+    const hero = document.getElementById('hero-bg');
+    const title = document.getElementById('hero-title');
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    const fadeRatio = Math.min(scrollY / viewportHeight, 1);
+    hero.style.opacity = `${1 - fadeRatio}`;
+    title.style.opacity = `${1 - fadeRatio}`;
+  });
+
+  // Fade-in animation for sections + anchor scroll smoothing
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+
+    // Smooth scroll to anchor links
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - 100,
+            behavior: 'smooth'
+          });
+        }, 600);
+      }
+    }
+  });
+</script>
+
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+        style="position:fixed; bottom:2rem; right:2rem; background:#333; color:white; padding:0.75rem 1rem; border:none; border-radius:999px; cursor:pointer; z-index:10;">
+  ↑ Top
+</button>
+

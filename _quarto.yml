@@ -4,7 +4,7 @@ project:
 
 
 website:
-  title: "April 10th 2025 - Ipi-Nivo for MCC - results from Checkmate 358"
+  title: "Society of Cutaneous Oncology Journal Club"
   navbar:
     left:
       - href: index.qmd
@@ -13,10 +13,10 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: theme.scss
+#      - cosmo
+#      - brand
+#    css: styles.css
     toc: true
 
 

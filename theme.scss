@@ -1,0 +1,258 @@
+/*-- scss:defaults --*/
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$primary:  #06436e !default;
+$font-family-base:  'Source Sans Pro', 'Lato', 'Merriweather', 'Roboto Regular', 'Cabin Regular' !default;
+$body-color: $gray-700 !default;
+$headings-font-family: 'Merriweather', 'Roboto', 'Playfair Display', 'Montserrat' !default;
+
+/*-- scss:rules --*/
+
+/* Typography & Headings */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+}
+
+/* Title Styling */
+.quarto-title .title {
+  font-family: "Oleo Script", $headings-font-family;
+  font-size: $font-size-base * 3;
+}
+.quarto-title-block {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Category Badges */
+.quarto-categories .quarto-category,
+div.quarto-post .listing-categories .listing-category {
+  color: $white;
+  background-color: $primary;
+  border: none;
+  border-radius: 0.4em;
+  text-transform: none;
+  opacity: 1;
+}
+div.quarto-post .listing-categories .listing-category:hover {
+  background-color: darken($primary, 10%);
+  cursor: pointer;
+}
+
+/* Sticky & Blurred Navbar */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(6, 67, 110, 0.7); // $primary with transparency
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  background-color: rgba(6, 67, 110, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.navbar-dark .navbar-brand {
+  font-family: "Oleo Script", $headings-font-family;
+  font-size: $font-size-base * 1.5;
+}
+.navbar > .container-xxl,
+.navbar > .container-xl,
+.navbar > .container-lg,
+.navbar > .container-md,
+.navbar > .container-sm,
+.navbar > .container,
+.navbar > .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TOC Placement */
+#TOC, .quarto-sidebar-toc {
+  margin-top: 420px; // Adjust for parallax height
+}
+
+body.no-toc #quarto-margin-sidebar {
+  display: none !important;
+}
+
+body.no-toc .page-columns {
+  grid-template-columns: 1fr !important;
+}
+
+body.no-toc main.content {
+  margin-left: 0 !important;
+}
+
+body.no-toc #quarto-margin-sidebar {
+  display: none !important;
+}
+
+
+/* Parallax Banner */
+.parallax-section {
+  height: 100vh;
+  width: 100vw;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  z-index: 1;
+}
+.parallax-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+}
+.parallax-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, white 100%);
+  z-index: 2;
+}
+.parallax-section > * {
+  position: relative;
+  z-index: 2;
+}
+.parallax-section h1 {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Medium screens (iPads & small laptops) */
+@media (max-width: 1200px) {
+  .parallax-section {
+    background-position: center center;
+    min-height: 400px;
+    width: 100vw; // Fix: use 100vw instead of 104vw to avoid overflow/misalignment
+    margin-left: 0;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .parallax-section {
+    background-attachment: scroll;
+    min-height: 300px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .parallax-section {
+    background-position: center 20%;
+    min-height: 250px;
+    font-size: 1.8rem;
+  }
+}
+
+
+/* Main Content Panel */
+main.content {
+  margin-top: -6rem;
+  padding-top: 6rem;
+  background-color: white;
+  border-radius: 1rem 1rem 0 0;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Article Card Styling */
+.article-card, .quarto-post {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-left: 4px solid $primary;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.article-card:hover, .quarto-post:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  background-color: #f9f9f9;
+}
+.article-metadata {
+  font-size: 0.9rem;
+  color: $gray-600;
+  margin-bottom: 1rem;
+}
+
+/* Scroll Down Indicator */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+  color: white;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Optional About Text Styling */
+#about-me-text {
+  align-items: end;
+  display: grid;
+}
+
+/* Fade-in utility class */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
