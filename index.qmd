@@ -83,7 +83,9 @@ page-layout: full
 </style>
 
 <div class="hero-container" id="hero-bg"></div>
-<h1 class="hero-title" id="hero-title">Advancing Skin Cancer Care Through Clinical Trials and Informatics</h1>
+<h1 class="hero-title" id="hero-title">
+Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
+</h1>
 
 <div class="scroll-content">
 <!-- Hidden heading for accessibility -->

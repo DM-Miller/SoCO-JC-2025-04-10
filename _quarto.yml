@@ -9,7 +9,13 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - text: Perspectives on the Science
+        href: https://journalofcutaneousoncology.io
+        target: _blank
+      - text: SoCO JC Timeline 
+        href: https://cutaneousoncology.shinyapps.io/soco_journal_club_timeline
+        target: _blank
+      
 
 format:
   html:
