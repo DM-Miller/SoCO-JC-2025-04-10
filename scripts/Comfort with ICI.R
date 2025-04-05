@@ -10,6 +10,7 @@ dt2$comfort_with_ici[is.na(dt2$comfort_with_ici)] <- "Not Answered"
 
 # Standardize response categories
 dt2 <- dt2 |> 
+  select(comfort_with_ici) |> 
   mutate(comfort_with_ici = case_when(
     str_detect(comfort_with_ici, "Very Comfortable") ~ "Very comfortable – strongly consider recommending ICI",
     str_detect(comfort_with_ici, "Somewhat Comfortable") ~ "Somewhat comfortable – for select high-risk cases",
@@ -22,20 +23,26 @@ dt2 <- dt2 |>
     TRUE ~ comfort_with_ici  # Keep as is if no match is found
   ))
 
+dt2 <- dt2 |> 
+  select(comfort_with_ici)
+
+dt3 <- dt2 |> 
+  filter(!comfort_with_ici %in% c(
+    "Not Answered", 
+    "I am a clinician but I don't see MCC", 
+    "I am not a clinician",
+    "Not applicable – I don't manage systemic therapy"))
+
 # Define the correct order of response categories
 ordered_levels <- c(
   "Very comfortable – strongly consider recommending ICI",
   "Somewhat comfortable – for select high-risk cases",
   "Uncertain – need more evidence",
-  "Uncomfortable – would not recommend based on ctDNA alone",
-  "Not applicable – I don't manage systemic therapy",
-  "I am not a clinician",
-  "I am a clinician but I don't see MCC",
-  "Not Answered"
+  "Uncomfortable – would not recommend based on ctDNA alone"
 )
 
 # Ensure factor levels are set before counting
-comfort_with_ici_counts <- dt2 |> 
+comfort_with_ici_counts <- dt3 |> 
   mutate(comfort_with_ici = factor(comfort_with_ici, levels = ordered_levels, ordered = TRUE)) |> 
   count(comfort_with_ici, .drop = FALSE) |>  # .drop = FALSE keeps missing factor levels
   mutate(prop = round(n / sum(n) * 100))  
@@ -58,7 +65,7 @@ comfort_with_ici_plot <- ggplot(
   ylab(paste0(
     "Number of Respondents (Total = ", sum(comfort_with_ici_counts$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18, margin = margin(0, 190, 0, 0)),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
@@ -69,10 +76,10 @@ comfort_with_ici_plot <- ggplot(
     axis.line = element_line(),
     plot.margin = margin(0.2, 0, 0.2, 0, "cm")
   ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(comfort_with_ici_counts$n + 0.2))
+    breaks = seq(0, max(comfort_with_ici_counts$n) + 0.5, by = 1),
+    limits = c(0, max(comfort_with_ici_counts$n + 1))
   ) +
   coord_flip()
 

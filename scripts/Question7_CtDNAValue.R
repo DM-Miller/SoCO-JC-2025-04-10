@@ -7,11 +7,16 @@ dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
 
 dt$ctdna_value[is.na(dt$ctdna_value)] <- "Not Answered"
 
+dt1 <- dt |> 
+  select(ctdna_value)
+
+# Exclude "Not Answered" and "Not Familiar" responses
+dt_filtered <- dt1 |> 
+  filter(!ctdna_value %in% c("Not Answered", "Not Familiar"))
+
 # Define the correct order of response categories
 ordered_levels <- rev(
   c(
-    "Not Answered",
-    "Not Familiar",
     "No Value",
     "Not Very Valuable",
     "Uncertain",
@@ -21,7 +26,7 @@ ordered_levels <- rev(
 )
 
 # Ensure factor levels are set before counting
-ctdna_value <- dt |> 
+ctdna_value <- dt_filtered |> 
   drop_na(ctdna_value) |> 
   mutate(ctdna_value = factor(ctdna_value, levels = ordered_levels, ordered = TRUE)) |> 
   count(ctdna_value, .drop = FALSE) |>  # .drop = FALSE ensures all levels appear even if count is 0
@@ -50,7 +55,7 @@ ctdna_value_plot <- ggplot(
     sum(ctdna_value$n),
     ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.title = element_text(hjust = 0.5, face = "bold", margin = margin(0, 100, 0, 0)),
     title = element_text(face = "bold", size = 18),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
@@ -65,7 +70,7 @@ ctdna_value_plot <- ggplot(
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
     breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(ctdna_value$n + 0.2))
+    limits = c(0, max(ctdna_value$n + 0.6))
   ) +
   coord_flip()
 

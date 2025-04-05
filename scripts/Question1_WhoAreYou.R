@@ -1,7 +1,5 @@
 # Load necessary libraries
 library(tidyverse)
-library(here)
-
 # Load Data
 dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
 
@@ -36,13 +34,15 @@ role_plot <- ggplot(
   ) +
   ggtitle(str_wrap(
     "Which of the following best describes you?",
-    35)
+    60)
   ) +
   xlab("") +
   ylab(paste0(
     "Number of Respondents (Total = ", sum(who_are_you$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.title = element_text(hjust = 0.5, face = "bold", 
+                              size = 22,
+                              margin = margin(0, 150, 0, 0)),
     title = element_text(face = "bold", size = 18),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),

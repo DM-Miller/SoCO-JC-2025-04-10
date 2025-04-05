@@ -8,10 +8,24 @@ include-in-header:
         }
         h1.title {
           text-align: center;
-          padding-top: 120px; /* Add space for the draft banner */
+          padding-top: 120px;
+        }
+
+        /* Make plot outputs fill more width */
+        .cell-output-display {
+          max-width: 100% !important;
+        }
+
+        /* Optionally remove left/right padding */
+        main.content {
+          padding-left: 2rem;
+          padding-right: 2rem;
         }
       </style>
-format: html
+format:
+  html:
+    theme: default
+    page-layout: full
 ---
 
 

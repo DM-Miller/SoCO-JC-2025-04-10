@@ -5,27 +5,27 @@ library(here)
 # Load Data
 dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
 
-dt$used_ctdna[is.na(dt$used_ctdna)] <- "Not Answered"
+# Replace NA values with "Not Answered" before filtering
+dt_used_ctdna <- dt %>%
+  select(used_ctdna) |> 
+  mutate(used_ctdna = replace_na(used_ctdna, "Not Answered"))
+
+# Filter out "Not Answered" and "I Am Not A Clinician"
+dt_used_ctdna_filtered <- dt_used_ctdna %>%
+  filter(!(used_ctdna %in% c("Not Answered", "I Am Not A Clinician")))
 
 # Define the correct order of response categories
-ordered_levels <- rev(
-  c(
-    "Not Answered",
-    "I Am Not A Clinician",
-    "No",
-    "Yes"
-  )
-)
+ordered_levels <- c("Yes", "No")
 
-# Ensure factor levels are set before counting
-used_ctdna <- dt |> 
-  drop_na(used_ctdna) |> 
-  mutate(used_ctdna = factor(used_ctdna, levels = ordered_levels, ordered = TRUE)) |> 
-  count(used_ctdna, .drop = FALSE) |>  # .drop = FALSE ensures all levels appear even if count is 0
-  mutate(prop = round(n / sum(n) * 100))  
+# Convert to factor with defined order
+dt_used_ctdna_filtered <- dt_used_ctdna_filtered %>%
+  mutate(used_ctdna = factor(used_ctdna, levels = ordered_levels, ordered = TRUE))
 
-# Debugging: Print to confirm all levels are there, even if n=0
-#print(used_ctdna)
+# Count occurrences of each response
+used_ctdna <- dt_used_ctdna_filtered %>%
+  count(used_ctdna, .drop = FALSE) %>%
+  mutate(prop = round(n / sum(n) * 100, 1))  # Ensuring proportions are calculated correctly
+
 
 # Generate plot
 used_ctdna_plot <- ggplot(
@@ -61,8 +61,8 @@ used_ctdna_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(used_ctdna$n + 0.2))
+    breaks = seq(0, max(used_ctdna$n + 1), by = 2), # Sets breaks at intervals of 2
+    limits = c(0, max(used_ctdna$n + 1))
   ) +
   coord_flip()
 

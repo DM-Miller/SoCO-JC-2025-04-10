@@ -44,7 +44,7 @@ mcc_patients_per_month_plot <- ggplot(
   ) +
   ggtitle(str_wrap(
     "How many MCC patients do you see per month?",
-    50)
+    60)
   ) +
   xlab("") +
   ylab(paste0(
@@ -52,7 +52,9 @@ mcc_patients_per_month_plot <- ggplot(
     sum(mcc_patients_per_month$n),
     ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.title = element_text(
+      hjust = 0.5, face = "bold", size = 20,
+      margin = margin(0, 130, 0, 0)),
     title = element_text(face = "bold", size = 18),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
@@ -67,7 +69,7 @@ mcc_patients_per_month_plot <- ggplot(
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
     breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(mcc_patients_per_month$n + 0.2))
+    limits = c(0, max(mcc_patients_per_month$n + 0.5))
   ) +
   coord_flip()
 

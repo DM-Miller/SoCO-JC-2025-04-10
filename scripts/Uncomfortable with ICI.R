@@ -36,6 +36,20 @@ ici_info_labels <- c(
 ici_info_long <- ici_info_long |> 
   mutate(additional_info_for_ici = recode(additional_info_for_ici, !!!ici_info_labels))
 
+dt3 <- dt2 |> 
+  select(contains("additional_info_for_ici"))
+
+# Filter for MCC clinicians only
+mcc_clinicians <- dt3 |> 
+  filter(additional_info_for_ici___not_a_clinician != 1 &
+           additional_info_for_ici___no_mcc_patients != 1)
+
+# Use MCC clinician subset for calculations
+ici_info_long_2 <- ici_info_long |> 
+  filter(!ici_info_long$additional_info_for_ici %in% c(
+    "I am not a clinician", "I am a clinician but I don't see MCC"
+  ))
+
 # Define explicit ordering of categories
 ordered_levels <- c(
   "No further info needed – would recommend ICI",
@@ -43,15 +57,13 @@ ordered_levels <- c(
   "Retrospective data showing improved outcomes",
   "Further validation of ctDNA assays",
   "Consensus guidelines or expert recommendations",
-  "Additional real-world evidence",
-  "I am not a clinician",
-  "I am a clinician but I don't see MCC"
+  "Additional real-world evidence"
 )
 
-# Count occurrences & normalize by total responses (not participants)
-ici_info_counts <- ici_info_long |> 
+# Count occurrences & normalize by MCC clinician responses
+ici_info_counts <- ici_info_long_2 |> 
   count(additional_info_for_ici) |> 
-  mutate(prop = round(n / nrow(dt2) * 100)) |>  # Normalize by total responses
+  mutate(prop = round(n / nrow(mcc_clinicians) * 100)) |>  # Normalize by MCC clinicians (n=18)
   mutate(additional_info_for_ici = factor(additional_info_for_ici, levels = ordered_levels, ordered = TRUE)) 
 
 # Generate Plot
@@ -70,9 +82,9 @@ ici_info_plot <- ggplot(
   ) +
   xlab("") +
   ylab(paste0(
-    "Number of Responses (Total = ", nrow(dt2), ")")) +  # Use total responses, not participants
+    "Number of Responses (Total = ", nrow(mcc_clinicians), ")")) +  # Use MCC clinicians (n=18)
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18, margin = margin(0,170,0,0)),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
@@ -83,10 +95,10 @@ ici_info_plot <- ggplot(
     axis.line = element_line(),
     plot.margin = margin(0.2, 0, 0.2, 0, "cm")
   ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(ici_info_counts$n + 0.2))
+    breaks = seq(0, max(ici_info_counts$n) + 0.5, by = 1),
+    limits = c(0, max(ici_info_counts$n + 1))
   ) +
   coord_flip()
 

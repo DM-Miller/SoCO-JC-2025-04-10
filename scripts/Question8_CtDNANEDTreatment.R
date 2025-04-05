@@ -7,23 +7,25 @@ dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
 
 dt$ctdna_ned_treatment[is.na(dt$ctdna_ned_treatment)] <- "Not Answered"
 
+dt1 <- dt |> 
+  select(ctdna_ned_treatment)
+
+# Remove "Not Answered" and "I Am Not A Clinician" responses
+dt_filtered <- dt1 |> 
+  filter(!ctdna_ned_treatment %in% c("Not Answered", "I Am Not A Clinician", "Not Applicable"))
+
 # Define the correct order of response categories
-ordered_levels <- rev(
-  c(
-    "Not Answered",
-    "I Am Not A Clinician",
-    "Not Applicable",
-    "No",
-    "Yes"
-  )
+ordered_levels <- c(
+  "No",
+  "Yes"
 )
 
 # Process Data with explicit ordering
-ctdna_ned_treatment_count <- dt |> 
-  drop_na(ctdna_ned_treatment) |> 
+ctdna_ned_treatment_count <- dt_filtered |> 
   mutate(ctdna_ned_treatment = factor(ctdna_ned_treatment, levels = ordered_levels, ordered = TRUE)) |> 
   count(ctdna_ned_treatment, .drop = FALSE) |>  # .drop = FALSE ensures all levels appear even if count is 0
   mutate(prop = round(n / sum(n) * 100))  
+
 
 # Debugging: Print to confirm ordering
 #print(ctdna_ned_treatment_count)
@@ -50,8 +52,8 @@ ctdna_ned_treatment_plot <- ggplot(ctdna_ned_treatment_count, aes(x = ctdna_ned_
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(ctdna_ned_treatment_count$n + 0.3))
+    breaks = seq(0, max(ctdna_ned_treatment_count$n + 1), by = 2), # Sets breaks at intervals of 2
+    limits = c(0, max(ctdna_ned_treatment_count$n + 0.4))
   ) +
   coord_flip()
 

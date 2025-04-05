@@ -10,6 +10,7 @@ dt2$ctdna_vs_imaging[is.na(dt2$ctdna_vs_imaging)] <- "Not Answered"
 
 # Standardize response categories
 dt2 <- dt2 |> 
+  select(ctdna_vs_imaging) |> 
   mutate(ctdna_vs_imaging = case_when(
     str_detect(ctdna_vs_imaging, "Very Likely") ~ "Very likely – favor ctDNA over imaging",
     str_detect(ctdna_vs_imaging, "Somewhat Likely") ~ "Somewhat likely – would use selectively with imaging",
@@ -21,19 +22,22 @@ dt2 <- dt2 |>
     TRUE ~ ctdna_vs_imaging  # Keep as is if no match is found
   ))
 
+dt2 <- dt2 |> 
+  select(ctdna_vs_imaging)
+
+dt3 <- dt2 |> 
+  filter(!ctdna_vs_imaging %in% c("Not Answered", "I am not a clinician", "I am a clinician but I don't see MCC"))
+
 # Define the correct order of response categories
 ordered_levels <- c(
   "Very likely – favor ctDNA over imaging",
   "Somewhat likely – would use selectively with imaging",
   "Uncertain – more evidence needed",
-  "Unlikely – I will continue to rely primarily on imaging",
-  "I am not a clinician",
-  "I am a clinician but I don't see MCC",
-  "Not Answered"
+  "Unlikely – I will continue to rely primarily on imaging"
 )
 
 # Ensure factor levels are set before counting
-ctdna_vs_imaging_counts <- dt2 |> 
+ctdna_vs_imaging_counts <- dt3 |> 
   mutate(ctdna_vs_imaging = factor(ctdna_vs_imaging, levels = ordered_levels, ordered = TRUE)) |> 
   count(ctdna_vs_imaging, .drop = FALSE) |>  # .drop = FALSE keeps missing factor levels
   mutate(prop = round(n / sum(n) * 100))  
@@ -56,7 +60,7 @@ ctdna_vs_imaging_plot <- ggplot(
   ylab(paste0(
     "Number of Respondents (Total = ", sum(ctdna_vs_imaging_counts$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18, margin = margin(0,160,0,0)),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
@@ -69,8 +73,8 @@ ctdna_vs_imaging_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(ctdna_vs_imaging_counts$n + 0.2))
+    breaks = seq(0, max(ctdna_vs_imaging_counts$n) + .05),
+    limits = c(0, max(ctdna_vs_imaging_counts$n + 1))
   ) +
   coord_flip()
 

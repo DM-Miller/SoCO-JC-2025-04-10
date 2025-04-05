@@ -21,20 +21,28 @@ dt2 <- dt2 |>
 # Replace NA values with "Not Answered"
 dt2$barriers_to_ctdna[is.na(dt2$barriers_to_ctdna)] <- "Not Answered"
 
+#Filter out non clinicians
+
+dt2 <- dt2 |> 
+  select(barriers_to_ctdna)
+
+dt3 <- dt2 |> 
+  select(barriers_to_ctdna) |> 
+  filter(
+    !barriers_to_ctdna %in% c("I am not a clinician", "Not Answered", "I am a clinician but I don't see MCC")
+    )
+
 # Define the correct order of response categories
 ordered_levels <- c(
   "I do not see significant barriers to using ctDNA",
   "Limited clinical guidelines",
   "Impact on outcomes unclear",
   "Cost/coverage issues",
-  "Logistical challenges",
-  "I am not a clinician",
-  "I am a clinician but I don't see MCC",
-  "Not Answered"
+  "Logistical challenges"
 )
 
 # Ensure factor levels are set before counting
-barriers_ctdna <- dt2 |> 
+barriers_ctdna <- dt3 |> 
   drop_na(barriers_to_ctdna) |> 
   mutate(barriers_to_ctdna = factor(barriers_to_ctdna, levels = ordered_levels, ordered = TRUE)) |> 
   count(barriers_to_ctdna, .drop = FALSE) |>  
@@ -58,7 +66,7 @@ barriers_ctdna_plot <- ggplot(
   ylab(paste0(
     "Number of Respondents (Total = ", sum(barriers_ctdna$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.title = element_text(hjust = 0.5, face = "bold", margin = margin(0, 160,0,0)),
     title = element_text(face = "bold", size = 18),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
@@ -72,8 +80,8 @@ barriers_ctdna_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(barriers_ctdna$n + 0.2))
+    breaks = seq(0, max(barriers_ctdna$n + 0.2), by =1),
+    limits = c(0, max(barriers_ctdna$n + 0.5))
   ) +
   coord_flip()
 
