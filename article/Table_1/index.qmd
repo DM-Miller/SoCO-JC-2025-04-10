@@ -1,0 +1,39 @@
+---
+title: "Table 1"
+include-in-header: 
+  - text: |
+      <style>
+        body {
+          text-align: justify;
+        }
+        h1.title {
+          text-align: center;
+          padding-top: 120px;
+        }
+
+        /* Make plot outputs fill more width */
+        .cell-output-display {
+          max-width: 100% !important;
+        }
+
+        /* Optionally remove left/right padding */
+        main.content {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      </style>
+format:
+  html:
+    theme: default
+    page-layout: full
+toc: false
+---
+
+
+## Table 1
+
+![](../../img/table_1.jpg)
+
+<div style="text-align: right; margin-top: 2rem;">
+  <a href="../Table_2/" class="btn btn-primary">Next →</a>
+</div>

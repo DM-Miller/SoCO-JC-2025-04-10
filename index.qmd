@@ -112,7 +112,7 @@ Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
     const title = document.getElementById('hero-title');
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
-    const fadeRatio = Math.min(scrollY / viewportHeight, 1);
+    const fadeRatio = Math.min(scrollY / (viewportHeight * 0.5), 1);
     hero.style.opacity = `${1 - fadeRatio}`;
     title.style.opacity = `${1 - fadeRatio}`;
   });

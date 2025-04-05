@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Society of Cutaneous Oncology Journal Club</title>
+<title>article – Society of Cutaneous Oncology Journal Club</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,11 +68,89 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<style>
+  body {
+    text-align: justify;
+  }
+  h1.title {
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  /* Make plot outputs fill more width */
+  .cell-output-display {
+    max-width: 100% !important;
+  }
+
+  /* Optionally remove left/right padding */
+  main.content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -100,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Pre Journal Club Survey</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./article.html"> 
+    <a class="nav-link active" href="./article.html" aria-current="page"> 
 <span class="menu-text">Article</span></a>
   </li>  
 </ul>
@@ -111,166 +191,86 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 style="position: absolute; left: -9999px;" class="title display-7">
-Society of Cutaneous Oncology Journal Club April 10, 2025
-</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-
-<style>
-  .hero-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('./files/millerlab_touchdown_page_hero.png') center center / cover no-repeat;
-    transition: opacity 0.3s ease-out;
-  }
-
-  .hero-title {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 4rem);
-    text-align: center;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    z-index: 1;
-    transition: opacity 0.3s ease-out;
-    opacity: 0;
-    animation: fadeSlideDown 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
-
-
-  @keyframes fadeSlideDown {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -60%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-
-.scroll-content {
-  margin-top: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2rem 0.75rem;
-  max-width: min(95vw, 1200px);
-  background: white;
-  border-radius: 0.75rem 0.75rem 0 0; 
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 2;
-}
- /* Fade-in effect for listings */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @media (max-width: 600px) {
-    .scroll-content {
-      padding: 2rem 1rem;
-      max-width: 95vw;
-    }
-    .hero-title {
-      font-size: clamp(1.8rem, 6vw, 2.5rem);
-    }
-  }
-  
-</style>
-<div id="hero-bg" class="hero-container">
-
-</div>
-<h1 class="hero-title" id="hero-title">
-Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
-</h1>
-<div class="scroll-content">
-<!-- Hidden heading for accessibility -->
 
 <div id="overview" class="fade-in">
-<section id="agenda" class="level1">
-<h1>Agenda</h1>
-<ol type="1">
-<li>Brief Introductions</li>
-<li>Perspectives on the Science</li>
-<li>SoCo JC Timeline</li>
-<li>Pre-JC Survey</li>
-<li>Main Paper</li>
-<li>Post-JC Surbey</li>
-</ol>
+<section id="tables-and-figures" class="level2">
+<h2 class="anchored" data-anchor-id="tables-and-figures">Tables and Figures</h2>
+<div class="fade-in">
+<div id="Table_1">
+
+</div>
+</div>
+<div class="fade-in">
+<div id="Table_2">
+
+</div>
+</div>
 </section>
 </div>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1743850337845" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
+<div class="thumbnail">
+<p><a href="./article/Table_1/index.html" class="no-external"></a></p><a href="./article/Table_1/index.html" class="no-external">
+<p class="card-img-top"><img src="img/table_1.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./article/Table_1/index.html" class="no-external"></a></p>
 </div>
-<script>
-  // Scroll-based fade of hero banner
-  window.addEventListener('scroll', () => {
-    const hero = document.getElementById('hero-bg');
-    const title = document.getElementById('hero-title');
-    const scrollY = window.scrollY;
-    const viewportHeight = window.innerHeight;
-    const fadeRatio = Math.min(scrollY / (viewportHeight * 0.5), 1);
-    hero.style.opacity = `${1 - fadeRatio}`;
-    title.style.opacity = `${1 - fadeRatio}`;
-  });
-
-  // Fade-in animation for sections + anchor scroll smoothing
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-
-    // Smooth scroll to anchor links
-    if (window.location.hash) {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: target.getBoundingClientRect().top + window.scrollY - 100,
-            behavior: 'smooth'
-          });
-        }, 600);
-      }
-    }
-  });
-</script>
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="position:fixed; bottom:2rem; right:2rem; background:#333; color:white; padding:0.75rem 1rem; border:none; border-radius:999px; cursor:pointer; z-index:10;">
-↑ Top
-</button>
-
-
-
-</main> <!-- /main -->
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./article/Table_1/index.html" class="no-external">Table 1</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./article/Table_1/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./article/Table_1/index.html" class="no-external">Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./article/Table_1/index.html" class="no-external"></a></p><a href="./article/Table_1/index.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1743849637492" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
+<div class="thumbnail">
+<p><a href="./article/Table_2/index.html" class="no-external"></a></p><a href="./article/Table_2/index.html" class="no-external">
+<p class="card-img-top"><img src="img/table_2.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./article/Table_2/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./article/Table_2/index.html" class="no-external">Table 2</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./article/Table_2/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./article/Table_2/index.html" class="no-external">Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./article/Table_2/index.html" class="no-external"></a></p><a href="./article/Table_2/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

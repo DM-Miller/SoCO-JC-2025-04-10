@@ -1,0 +1,44 @@
+---
+title: ""
+include-in-header: 
+  - text: |
+      <style>
+        body {
+          text-align: justify;
+        }
+        h1.title {
+          text-align: center;
+          padding-top: 120px;
+        }
+
+        /* Make plot outputs fill more width */
+        .cell-output-display {
+          max-width: 100% !important;
+        }
+
+        /* Optionally remove left/right padding */
+        main.content {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      </style>
+format: html
+toc: false
+listing:
+  contents: article
+ 
+---
+
+<div class="fade-in" id="overview">
+## Tables and Figures
+<div class="fade-in">
+:::{#Table_1}
+:::
+</div>
+
+<div class="fade-in">
+:::{#Table_2}
+:::
+</div>
+
+</div>
