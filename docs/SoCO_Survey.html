@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-pre_jc_survey .list');
+    const listingTargetEl = window.document.querySelector('#listing-role .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -84,7 +84,35 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-pre_jc_survey'] = new List('listing-pre_jc_survey', options);
+    window['quarto-listings']['listing-role'] = new List('listing-role', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-experience .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-experience'] = new List('listing-experience', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -271,7 +299,46 @@ Pre Journal Club Survey
 <section id="pre-journal-club-survey" class="level2">
 <h2 class="anchored" data-anchor-id="pre-journal-club-survey">Pre Journal Club Survey</h2>
 <div class="fade-in">
-<div id="listing-pre_jc_survey" class="quarto-listing quarto-listing-container-default">
+<div id="listing-role" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1743846109966" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/role/index.html" class="no-external"></a></p><a href="./pre_jc_survey/role/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/role/index_files/figure-html/role-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/role/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/role/index.html" class="no-external">Role</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/role/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/role/index.html" class="no-external">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p></p>
+</figure>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/role/index.html" class="no-external"></a></p><a href="./pre_jc_survey/role/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-experience" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1743845428303" data-listing-reading-time-sort="1" data-listing-word-count-sort="94">
 <div class="thumbnail">
@@ -300,36 +367,6 @@ Pre Journal Club Survey
 </div>
 <div class="metadata">
 <p><a href="./pre_jc_survey/experience/index.html" class="no-external"></a></p><a href="./pre_jc_survey/experience/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1743845411311" data-listing-reading-time-sort="1" data-listing-word-count-sort="93">
-<div class="thumbnail">
-<p><a href="./pre_jc_survey/role/index.html" class="no-external"></a></p><a href="./pre_jc_survey/role/index.html" class="no-external">
-<p class="card-img-top"><img src="pre_jc_survey/role/index_files/figure-html/role-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./pre_jc_survey/role/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./pre_jc_survey/role/index.html" class="no-external">Role</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./pre_jc_survey/role/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./pre_jc_survey/role/index.html" class="no-external">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p></p>
-</figure>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./pre_jc_survey/role/index.html" class="no-external"></a></p><a href="./pre_jc_survey/role/index.html" class="no-external">
 </a>
 </div>
 </div>
