@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5d9244b8c8e9eadc7b06b8c2444643a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5d9244b8c8e9eadc7b06b8c2444643a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,6 +66,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+  body {
+    text-align: justify;
+  }
+  h1.title {
+    text-align: center;
+    padding-top: 120px; /* Add space for the draft banner */
+  }
+</style>
 
 
 </head>
@@ -83,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Society of Cutaneous Oncology Journal Club</span></a>
   </li>  
   <li class="nav-item">
@@ -95,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">SoCO JC Timeline</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./SoCO_Survey.html"> 
+    <a class="nav-link" href="../SoCO_Survey.html"> 
 <span class="menu-text">Pre Journal Club Survey</span></a>
   </li>  
 </ul>
@@ -106,162 +115,39 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 style="position: absolute; left: -9999px;" class="title display-7">
-Society of Cutaneous Oncology Journal Club April 10, 2025
-</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<style>
-  .hero-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url('./files/millerlab_touchdown_page_hero.png') center center / cover no-repeat;
-    transition: opacity 0.3s ease-out;
-  }
-
-  .hero-title {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 6vw, 4rem);
-    text-align: center;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    z-index: 1;
-    transition: opacity 0.3s ease-out;
-    opacity: 0;
-    animation: fadeSlideDown 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
-
-
-  @keyframes fadeSlideDown {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -60%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-
-.scroll-content {
-  margin-top: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2rem 0.75rem;
-  max-width: min(95vw, 1200px);
-  background: white;
-  border-radius: 0.75rem 0.75rem 0 0; 
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 2;
-}
- /* Fade-in effect for listings */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @media (max-width: 600px) {
-    .scroll-content {
-      padding: 2rem 1rem;
-      max-width: 95vw;
-    }
-    .hero-title {
-      font-size: clamp(1.8rem, 6vw, 2.5rem);
-    }
-  }
-  
-</style>
-<div id="hero-bg" class="hero-container">
-
-</div>
-<h1 class="hero-title" id="hero-title">
-Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
-</h1>
-<div class="scroll-content">
-<!-- Hidden heading for accessibility -->
-
-<div id="overview" class="fade-in">
-<section id="agenda" class="level1">
-<h1>Agenda</h1>
-<ol type="1">
-<li>Brief Introductions</li>
-<li>Perspectives on the Science</li>
-<li>SoCo JC Timeline</li>
-<li>Pre-JC Survey</li>
-<li>Main Paper</li>
-<li>Post-JC Surbey</li>
-</ol>
-</section>
+<hr>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/role-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<script>
-  // Scroll-based fade of hero banner
-  window.addEventListener('scroll', () => {
-    const hero = document.getElementById('hero-bg');
-    const title = document.getElementById('hero-title');
-    const scrollY = window.scrollY;
-    const viewportHeight = window.innerHeight;
-    const fadeRatio = Math.min(scrollY / viewportHeight, 1);
-    hero.style.opacity = `${1 - fadeRatio}`;
-    title.style.opacity = `${1 - fadeRatio}`;
-  });
-
-  // Fade-in animation for sections + anchor scroll smoothing
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-
-    // Smooth scroll to anchor links
-    if (window.location.hash) {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: target.getBoundingClientRect().top + window.scrollY - 100,
-            behavior: 'smooth'
-          });
-        }, 600);
-      }
-    }
-  });
-</script>
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="position:fixed; bottom:2rem; right:2rem; background:#333; color:white; padding:0.75rem 1rem; border:none; border-radius:999px; cursor:pointer; z-index:10;">
-↑ Top
-</button>
+</div>
+<hr>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/patient experience-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 
 
 
