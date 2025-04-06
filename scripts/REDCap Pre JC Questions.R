@@ -181,20 +181,20 @@ dt[,8] <- stringr::str_to_title(
 dt[,9] <- stringr::str_replace_all(
   string = dt[,9],
   pattern = regex("_"),
-  replacement = "-"
-)
-
-dt[,9] <- stringr::str_replace_all(
-  string = dt[,9],
-  pattern = regex("_1"),
-  replacement = "-1"
-)
-
-dt[,9] <- stringr::str_replace_all(
-  string = dt[,9],
-  pattern = regex("_"),
   replacement = " "
 )
+
+#dt[,9] <- stringr::str_replace_all(
+#  string = dt[,9],
+#  pattern = regex("_1"),
+#  replacement = "-1"
+#)
+
+#dt[,9] <- stringr::str_replace_all(
+#  string = dt[,9],
+#  pattern = regex("_"),
+#  replacement = " "
+#)
 
 dt[,9] <- stringr::str_to_title(
   string = dt[,9]
@@ -206,11 +206,11 @@ dt[,10] <- stringr::str_replace_all(
   replacement = "-"
 )
 
-dt[,10] <- stringr::str_replace_all(
-  string = dt[,10],
-  pattern = regex("_1"),
-  replacement = "-1"
-)
+#dt[,10] <- stringr::str_replace_all(
+#  string = dt[,10],
+#  pattern = regex("_1"),
+#  replacement = "-1"
+#)
 
 dt[,10] <- stringr::str_replace_all(
   string = dt[,10],
@@ -227,11 +227,11 @@ dt[,11] <- stringr::str_replace_all(
   replacement = "-"
 )
 
-dt[,11] <- stringr::str_replace_all(
-  string = dt[,11],
-  pattern = regex("_1"),
-  replacement = "-1"
-)
+#dt[,11] <- stringr::str_replace_all(
+#  string = dt[,11],
+#  pattern = regex("_1"),
+#  replacement = "-1"
+#)
 
 dt[,11] <- stringr::str_replace_all(
   string = dt[,11],
@@ -249,11 +249,11 @@ dt[,12] <- stringr::str_replace_all(
   replacement = "-"
 )
 
-dt[,12] <- stringr::str_replace_all(
-  string = dt[,12],
-  pattern = regex("_1"),
-  replacement = "-1"
-)
+#dt[,12] <- stringr::str_replace_all(
+#  string = dt[,12],
+#  pattern = regex("_1"),
+#  replacement = "-1"
+#)
 
 dt[,12] <- stringr::str_replace_all(
   string = dt[,12],
@@ -265,19 +265,19 @@ dt[,12] <- stringr::str_to_title(
   string = dt[,12]
 )
 
-# Apply formatting corrections to columns 12, 13, 14, and 15
-for (col in 12:19) {
+# Apply formatting corrections to columns 12 through 22
+for (col in 12:22) {
   dt[, col] <- stringr::str_replace_all(
     string = dt[, col],
     pattern = regex("__"),
     replacement = "-"
   )
   
-  dt[, col] <- stringr::str_replace_all(
-    string = dt[, col],
-    pattern = regex("_1"),
-    replacement = "-1"
-  )
+#  dt[, col] <- stringr::str_replace_all(
+#    string = dt[, col],
+#    pattern = regex("_1"),
+#    replacement = "-1"
+#  )
   
   dt[, col] <- stringr::str_replace_all(
     string = dt[, col],
