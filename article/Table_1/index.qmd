@@ -8,7 +8,7 @@ include-in-header:
         }
         h1.title {
           text-align: center;
-          padding-top: 20px;
+          padding-top: 10px;
         }
 
         /* Make plot outputs fill more width */
