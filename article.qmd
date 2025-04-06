@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Tables and Figures"
 include-in-header: 
   - text: |
       <style>
