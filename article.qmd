@@ -1,10 +1,14 @@
 ---
-title: "Nivolumab With or Without Ipilimumab in Patients With Recurrent or Metastatic Merkel Cell Carcinoma:<br><br>A
-Nonrandomized, Open-Label, International, Multicenter Phase I/II Study"
+title: ""
+page-layout: full
+title-block-banner: false
 include-in-header: 
   - text: |
       <style>
         body {
+          background: url('files/soco_jc_hero1.png') center center / cover no-repeat fixed;
+          background-color: #000; /* fallback */
+          color: white; /* if needed, based on contrast */
           text-align: justify;
         }
         h1.title {
@@ -22,6 +26,37 @@ include-in-header:
           padding-left: 2rem;
           padding-right: 2rem;
         }
+        .hero-title-container {
+          text-align: center;
+          padding: 5rem 2rem 3rem 2rem;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.3));
+          color: white;
+          max-width: 100%;
+        }
+        
+        .hero-title-container h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+          line-height: 1.5;
+          font-weight: 700;
+          margin: 0 auto;
+          max-width: 1000px;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-title-box {
+          background: none;
+          color: black;
+          padding: 2rem 2rem 0 2rem;
+          margin: 0 auto;
+          text-align: center;
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+          font-weight: 700;
+          line-height: 1.4;
+          max-width: min(95vw, 1200px);
+          margin-top: 4rem;
+        }
+      
       </style>
 format: html
 toc: false
@@ -39,6 +74,12 @@ listing:
     type: default
     sort: "none"
 ---
+
+<div class="hero-title-box">
+  Nivolumab With or Without Ipilimumab in Patients With Recurrent or Metastatic Merkel Cell Carcinoma:<br><br>
+  A Nonrandomized, Open-Label, International, Multicenter Phase I/II Study
+</div>
+
 
 
 <div class="fade-in" id="overview">
