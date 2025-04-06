@@ -93,9 +93,9 @@
   {
     "objectID": "article.html#tables-and-figures",
     "href": "article.html#tables-and-figures",
-    "title": "Society of Cutaneous Oncology Journal Club",
-    "section": "",
-    "text": ":::{#Table 1} :::\n\n\n:::{#Table 2} :::"
+    "title": "Tables and Figures",
+    "section": "Tables and Figures",
+    "text": "Tables and Figures"
   },
   {
     "objectID": "article/Table_1/Table 1.html",
@@ -208,5 +208,19 @@
     "title": "Table 3",
     "section": "",
     "text": "← Previous Next →"
+  },
+  {
+    "objectID": "article/Introduction/index.html",
+    "href": "article/Introduction/index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Next →"
+  },
+  {
+    "objectID": "article/Introduction/index.html#paul",
+    "href": "article/Introduction/index.html#paul",
+    "title": "Introduction",
+    "section": "",
+    "text": "Next →"
   }
 ]

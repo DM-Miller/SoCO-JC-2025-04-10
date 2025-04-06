@@ -1,0 +1,45 @@
+---
+title: "Introduction"
+include-in-header: 
+  - text: |
+      <style>
+        body {
+          text-align: justify;
+        }
+        h1.title {
+          text-align: center;
+          padding-top: 20px;
+        }
+
+        /* Make plot outputs fill more width */
+        .cell-output-display {
+          max-width: 100% !important;
+        }
+
+        /* Optionally remove left/right padding */
+        main.content {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+        .nav-buttons {
+          display: flex;
+          justify-content: space-between;
+          margin: 2rem auto;
+          max-width: 1000px;
+        }
+      </style>
+format:
+  html:
+    theme: default
+    page-layout: full
+toc: false
+---
+
+
+## Paul
+
+
+
+<div class="nav-buttons">
+  <a href="../Table_1/" class="btn btn-primary">Next →</a>
+</div>
