@@ -1,5 +1,6 @@
 ---
-title: "Tables and Figures"
+title: "Nivolumab With or Without Ipilimumab in Patients With Recurrent or Metastatic Merkel Cell Carcinoma:<br><br>A
+Nonrandomized, Open-Label, International, Multicenter Phase I/II Study"
 include-in-header: 
   - text: |
       <style>
@@ -24,9 +25,19 @@ include-in-header:
       </style>
 format: html
 toc: false
-listing:
-  contents: article
- 
+listing: 
+  - id: content
+    contents:
+      - article/Introduction
+      - article/Table_1
+      - article/Table_2
+      - article/Table_3
+      - article/Figure_1
+      - article/Figure_2a
+      - article/Figure_2b
+      - article/Table_4
+    type: default
+    sort: "none"
 ---
 
 
