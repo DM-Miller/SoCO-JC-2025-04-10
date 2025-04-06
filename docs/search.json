@@ -158,7 +158,7 @@
     "href": "article/Table_1/index.html",
     "title": "Table 1",
     "section": "",
-    "text": "Next →"
+    "text": "← Previous Next →"
   },
   {
     "objectID": "article/Table_1/index.html#table-1",
@@ -193,7 +193,7 @@
     "href": "article/Table_1/index.html#section",
     "title": "Table 1",
     "section": "",
-    "text": "Next →"
+    "text": "← Previous Next →"
   },
   {
     "objectID": "article/Table_3/index.html",
@@ -222,5 +222,47 @@
     "title": "Introduction",
     "section": "",
     "text": "Next →"
+  },
+  {
+    "objectID": "article/Figure_1/index.html",
+    "href": "article/Figure_1/index.html",
+    "title": "Figure 1",
+    "section": "",
+    "text": "← Previous Next →"
+  },
+  {
+    "objectID": "article/Figure_1/index.html#section",
+    "href": "article/Figure_1/index.html#section",
+    "title": "Figure 1",
+    "section": "",
+    "text": "← Previous Next →"
+  },
+  {
+    "objectID": "article/Figure_2a/index.html",
+    "href": "article/Figure_2a/index.html",
+    "title": "Figure 2A",
+    "section": "",
+    "text": "← Previous Next →"
+  },
+  {
+    "objectID": "article/Figure_2a/index.html#section",
+    "href": "article/Figure_2a/index.html#section",
+    "title": "Figure 2A",
+    "section": "",
+    "text": "← Previous Next →"
+  },
+  {
+    "objectID": "article/Figure_2b/index.html",
+    "href": "article/Figure_2b/index.html",
+    "title": "Figure 2B",
+    "section": "",
+    "text": "← Previous Next →"
+  },
+  {
+    "objectID": "article/Figure_2b/index.html#section",
+    "href": "article/Figure_2b/index.html#section",
+    "title": "Figure 2B",
+    "section": "",
+    "text": "← Previous Next →"
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: "Table 1"
+title: "Figure 2B"
 include-in-header: 
   - text: |
       <style>
@@ -32,9 +32,9 @@ toc: false
 
 ## 
 
-![](../../img/table_1.jpg)
+![](../../img/figure_2b.jpg)
 
 <div style="text-align: right; margin-top: 2rem;">
-  <a href="../Introduction/" class="btn btn-primary">← Previous</a>
-  <a href="../Table_2/" class="btn btn-primary">Next →</a>
+  <a href="../Figure_2a/" class="btn btn-primary">← Previous</a>
+  <a href="../Figure_3/" class="btn btn-primary">Next →</a>
 </div>

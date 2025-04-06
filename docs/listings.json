@@ -9,6 +9,9 @@
   {
     "listing": "/article.html",
     "items": [
+      "/article/Figure_1/index.html",
+      "/article/Figure_2a/index.html",
+      "/article/Figure_2b/index.html",
       "/article/Introduction/index.html",
       "/article/Table_1/index.html",
       "/article/Table_2/index.html",
