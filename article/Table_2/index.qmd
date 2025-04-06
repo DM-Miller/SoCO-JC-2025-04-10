@@ -11,7 +11,7 @@ include-in-header:
 
         h1.title {
           text-align: center;
-          padding-top: 120px;
+          padding-top: 20px;
         }
 
         /* Remove container width limits */
@@ -44,7 +44,7 @@ include-in-header:
         
         .large-table-image {
           width: 100%;
-          max-width: 3000px;
+          max-width: 1200px;
           height: auto;
           display: block;
           margin-left: auto;
@@ -78,7 +78,7 @@ format:
 toc: false
 ---
 
-##   {.center-heading}
+##  
 
 
 <div class="full-width-wrapper">
