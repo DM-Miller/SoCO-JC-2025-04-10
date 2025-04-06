@@ -69,22 +69,71 @@ ul.task-list li input[type="checkbox"] {
 <style>
   body {
     text-align: justify;
+    margin: 0;
+    padding: 0;
   }
+
   h1.title {
     text-align: center;
     padding-top: 120px;
   }
 
-  /* Make plot outputs fill more width */
+  /* Remove container width limits */
+  .quarto-container,
+  .page-columns,
+  .page-columns.page-full,
+  .column-page,
+  .content,
+  .content.page-columns,
+  main.content {
+    max-width: 100vw !important;
+    width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   .cell-output-display {
     max-width: 100% !important;
   }
 
-  /* Optionally remove left/right padding */
-  main.content {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  /* Flex wrapper to center image */
+  .full-width-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 2rem auto;
   }
+
+  .large-table-image {
+    width: 100%;
+    max-width: 3000px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+    max-width: 1000px;
+  }
+  .center-heading {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+
+  @media (min-width: 1600px) {
+    .large-table-image {
+      max-width: 1800px;
+    }
+  }
+
 </style>
 
 
@@ -157,11 +206,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="table-2" class="level2">
-<h2 class="anchored" data-anchor-id="table-2">Table 2</h2>
-<p><img src="../../img/table_2.jpg" class="img-fluid"></p>
-<div style="text-align: right; margin-top: 2rem;">
-<p><a href="../Table 2/" class="btn btn-primary">Next →</a></p>
+<section id="section" class="level2 center-heading">
+<h2 class="center-heading anchored" data-anchor-id="section"></h2>
+<div class="full-width-wrapper">
+<p><img src="../../img/table_2.jpg" class="large-table-image"></p>
+</div>
+<div class="nav-buttons">
+<p><a href="../Table 1/" class="btn btn-primary">← Previous</a> <a href="../Table 3/" class="btn btn-primary">Next →</a></p>
 </div>
 
 
