@@ -46,18 +46,22 @@ page-layout: full
   }
 
 
-.scroll-content {
-  margin-top: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2rem 0.75rem;
-  max-width: min(95vw, 1200px);
-  background: white;
-  border-radius: 0.75rem 0.75rem 0 0; 
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 2;
-}
+  .scroll-content {
+    margin-top: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 0.75rem;
+    max-width: min(95vw, 1200px);
+    background: white;
+    border-radius: 0.75rem 0.75rem 0 0; 
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    line-height: 1.6;
+    text-align: center;  /* NEW */
+    }
+
  /* Fade-in effect for listings */
   .fade-in {
     opacity: 0;
@@ -83,23 +87,46 @@ page-layout: full
 </style>
 
 <div class="hero-container" id="hero-bg"></div>
-<h1 class="hero-title" id="hero-title">
-Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
-</h1>
+<h1 class="hero-title" id="hero-title">Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025</h1>
 
 <div class="scroll-content">
 <!-- Hidden heading for accessibility -->
-<h1 style="position: absolute; left: -9999px;">Society of Cutaneous Oncology Journal Club April 10, 2025</h1>
+<h1 style="position: absolute; left: -9999px;">Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025</h1>
 
 <div class="fade-in" id="overview">
+
 # Agenda
 
-1. Brief Introductions
-2. Perspectives on the Science
-3. SoCo JC Timeline
-4. Pre-JC Survey
-5. Main Paper
-6. Post-JC Surbey
+<div style="display: inline-block; text-align: left;">
+
+  <ol>
+    <li>
+      Brief Introductions
+      <ol type="a">
+        <li>
+          Academic participants please put following information in the chat:
+          <ul>
+            <li><span style="color: #3366cc;">Name, affiliated hospital/institution, role</span></li>
+          </ul>
+        </li>
+        <li>
+          BMS
+          <ul>
+            <li><span style="color: #3366cc;">Brief introductions on screen</span></li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+    <li>Perspectives on the Science</li>
+    <li>SoCo JC Timeline</li>
+    <li>Pre-JC Survey</li>
+    <li>Main Paper</li>
+    <li>Post-JC Survey</li>
+  </ol>
+
+</div>
+
+
 
 </div>
 
@@ -112,7 +139,7 @@ Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
     const title = document.getElementById('hero-title');
     const scrollY = window.scrollY;
     const viewportHeight = window.innerHeight;
-    const fadeRatio = Math.min(scrollY / (viewportHeight * 0.5), 1);
+    const fadeRatio = Math.min(scrollY / viewportHeight, 1);
     hero.style.opacity = `${1 - fadeRatio}`;
     title.style.opacity = `${1 - fadeRatio}`;
   });
