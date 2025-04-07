@@ -323,6 +323,62 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-first_line_dosing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-first_line_dosing'] = new List('listing-first_line_dosing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-second_line_dosing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-second_line_dosing'] = new List('listing-second_line_dosing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-ipi_nivo_barriers .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -747,7 +803,7 @@ No matching items
 <div class="fade-in">
 <div id="listing-labeling_mcc" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744025815841" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744041931379" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
 <p><a href="./pre_jc_survey/labeling/index.html" class="no-external"></a></p><a href="./pre_jc_survey/labeling/index.html" class="no-external">
 <p class="card-img-top"><img src="pre_jc_survey/labeling/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
@@ -778,7 +834,7 @@ No matching items
 <div class="fade-in">
 <div id="listing-labeling_mcc_justified" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744025488091" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744041790537" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
 <p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external"></a></p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external">
 <p class="card-img-top"><img src="pre_jc_survey/labeling_warranted/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
@@ -797,6 +853,68 @@ No matching items
 </div>
 <div class="metadata">
 <p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external"></a></p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-first_line_dosing" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744041858634" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/first_line/index.html" class="no-external"></a></p><a href="./pre_jc_survey/first_line/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/first_line/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/first_line/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/first_line/index.html" class="no-external">Nivo Plus Ipi Dosing in First-Line MCC</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/first_line/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/first_line/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/first_line/index.html" class="no-external"></a></p><a href="./pre_jc_survey/first_line/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-second_line_dosing" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744042134878" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/second_line/index.html" class="no-external"></a></p><a href="./pre_jc_survey/second_line/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/second_line/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/second_line/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/second_line/index.html" class="no-external">Nivo Plus Ipi Dosing in Second-Line MCC</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/second_line/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/second_line/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/second_line/index.html" class="no-external"></a></p><a href="./pre_jc_survey/second_line/index.html" class="no-external">
 </a>
 </div>
 </div>
@@ -861,7 +979,7 @@ No matching items
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-ipi_nivo_barriers">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744024133249" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744042199307" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
 <p><a href="./pre_jc_survey/barriers/index.html" class="no-external"></a></p><a href="./pre_jc_survey/barriers/index.html" class="no-external">
 <p class="card-img-top"><img src="pre_jc_survey/barriers/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>

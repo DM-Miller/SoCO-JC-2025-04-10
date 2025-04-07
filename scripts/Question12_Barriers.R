@@ -78,7 +78,7 @@ barriers_ipi_nivo_plot <- barriers_ipi_nivo_count |>
   ) +
   ggtitle(str_wrap(
     "Barriers to Using Ipi/Nivo in Practice",
-    35)
+    55)
   ) +
   xlab("") +
   ylab(paste0(

@@ -19,6 +19,10 @@ listing:
   contents: pre_jc_survey/labeling
 - id: labeling_mcc_justified
   contents: pre_jc_survey/labeling_warranted
+- id: first_line_dosing
+  contents: pre_jc_survey/first_line
+- id: second_line_dosing
+  contents: pre_jc_survey/second_line
 - id: ipi_nivo_barriers
   contents: pre_jc_survey/barriers       
 ---
@@ -154,6 +158,16 @@ listing:
 
 <div class="fade-in">
 :::{#labeling_mcc_justified}
+:::
+</div>
+
+<div class="fade-in">
+:::{#first_line_dosing}
+:::
+</div>
+
+<div class="fade-in">
+:::{#second_line_dosing}
 :::
 </div>
 

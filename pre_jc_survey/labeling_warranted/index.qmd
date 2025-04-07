@@ -58,5 +58,5 @@ label_justified_plot
 
 <div style="text-align: right; margin-top: 2rem;">
   <a href="../labeling/" class="btn btn-primary">← Previous</a>
-  <a href="../second_line/" class="btn btn-primary">Next →</a>
+  <a href="../first_line/" class="btn btn-primary">Next →</a>
 </div>

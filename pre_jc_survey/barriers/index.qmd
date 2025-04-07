@@ -47,8 +47,8 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 
 ```{r patient experience, echo=FALSE}
 #| eval: true
-#| fig-width: 8
-#| fig-height: 5
+#| fig-width: 11
+#| fig-height: 6
 #| fig-align: center
 source(file.path(scripts_dir, "Question12_Barriers.R"))
 
