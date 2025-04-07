@@ -211,6 +211,62 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-ipi_nivo_denied .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-ipi_nivo_denied'] = new List('listing-ipi_nivo_denied', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-nccn_mcc .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-nccn_mcc'] = new List('listing-nccn_mcc', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-ipi_nivo_barriers .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -511,7 +567,7 @@ No matching items
 <div class="fade-in">
 <div id="listing-mgmt_case_1" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744022211297" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744023735511" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
 <p><a href="./pre_jc_survey/case_1/index.html" class="no-external"></a></p><a href="./pre_jc_survey/case_1/index.html" class="no-external">
 <p class="card-img-top"><img src="pre_jc_survey/case_1/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
@@ -561,6 +617,68 @@ No matching items
 </div>
 <div class="metadata">
 <p><a href="./pre_jc_survey/case_2/index.html" class="no-external"></a></p><a href="./pre_jc_survey/case_2/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-ipi_nivo_denied" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744023546324" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external"></a></p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/coverage_denied/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/coverage_denied/index.html" class="no-external">Coverage for Ipi/Nivo in MCC</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/coverage_denied/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/coverage_denied/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external"></a></p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-nccn_mcc" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744023637932" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/nccn/Index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn/Index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./pre_jc_survey/nccn/Index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/nccn/Index.html" class="no-external">NCCN Guidelines</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/nccn/Index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/nccn/Index.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/nccn/Index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn/Index.html" class="no-external">
 </a>
 </div>
 </div>

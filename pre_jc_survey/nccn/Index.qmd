@@ -1,5 +1,5 @@
 ---
-title: "Treatment Recommendations #1"
+title: "NCCN Guidelines"
 include-in-header: 
   - text: |
       <style>
@@ -47,15 +47,15 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 
 ```{r patient experience, echo=FALSE}
 #| eval: true
-#| fig-width: 11
-#| fig-height: 6
+#| fig-width: 8
+#| fig-height: 5
 #| fig-align: center
-source(file.path(scripts_dir, "Question4_mgmt_oligo_met.R"))
+source(file.path(scripts_dir, "Question7_nccn.R"))
 
-mgmt_1_plot
+coverage_ipi_nivo_plot
 ```
 
 <div style="text-align: right; margin-top: 2rem;">
-  <a href="../Ipi_nivo_rx_yn/" class="btn btn-primary">← Previous</a>
-  <a href="../case_2/" class="btn btn-primary">Next →</a>
+  <a href="../coverage_denied/" class="btn btn-primary">← Previous</a>
+  <a href="../labeling/" class="btn btn-primary">Next →</a>
 </div>

@@ -11,6 +11,10 @@ listing:
   contents: pre_jc_survey/case_1
 - id: mgmt_case_2
   contents: pre_jc_survey/case_2
+- id: ipi_nivo_denied
+  contents: pre_jc_survey/coverage_denied
+- id: nccn_mcc
+  contents: pre_jc_survey/nccn
 - id: ipi_nivo_barriers
   contents: pre_jc_survey/barriers       
 ---
@@ -126,6 +130,16 @@ listing:
 
 <div class="fade-in">
 :::{#mgmt_case_2}
+:::
+</div>
+
+<div class="fade-in">
+:::{#ipi_nivo_denied}
+:::
+</div>
+
+<div class="fade-in">
+:::{#nccn_mcc}
 :::
 </div>
 
