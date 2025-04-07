@@ -15,7 +15,8 @@ dt[[question_var]] <- recode(
   dt[[question_var]],
   "Pd1 Refractory Setting" = "Anti-PD-1-Refractory Setting",
   "Both 1l And 2l" = "Both First-Line and Second-Line Setting",
-  "Not Applicable Clinician" = "I Am A Clinician But I Do Not Manage MCC Patients"
+  "Not Applicable Clinician" = "I Am A Clinician But I Do Not Manage MCC Patients",
+  "First Line Setting" = "First-Line Setting"
 )
 
 # Define the order of answer choices

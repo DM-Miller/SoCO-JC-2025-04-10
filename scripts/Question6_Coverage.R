@@ -49,7 +49,7 @@ coverage_ipi_nivo_plot <- ggplot(
     ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
-                              margin = margin(0, 100, 10, 0)),
+                              margin = margin(0, 130, 10, 0)),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
