@@ -15,6 +15,8 @@ listing:
   contents: pre_jc_survey/coverage_denied
 - id: nccn_mcc
   contents: pre_jc_survey/nccn
+- id: labeling_mcc
+  contents: pre_jc_survey/labeling
 - id: ipi_nivo_barriers
   contents: pre_jc_survey/barriers       
 ---
@@ -140,6 +142,11 @@ listing:
 
 <div class="fade-in">
 :::{#nccn_mcc}
+:::
+</div>
+
+<div class="fade-in">
+:::{#labeling_mcc}
 :::
 </div>
 
