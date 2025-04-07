@@ -1,1 +1,2 @@
 # SoCO
+# SoCO-Journal-Club
