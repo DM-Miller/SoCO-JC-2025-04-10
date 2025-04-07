@@ -295,6 +295,34 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-labeling_mcc_justified .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-labeling_mcc_justified'] = new List('listing-labeling_mcc_justified', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-ipi_nivo_barriers .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -738,6 +766,37 @@ No matching items
 </div>
 <div class="metadata">
 <p><a href="./pre_jc_survey/labeling/index.html" class="no-external"></a></p><a href="./pre_jc_survey/labeling/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-labeling_mcc_justified" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744025488091" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external"></a></p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/labeling_warranted/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external">Ipilimumab Labeling for MCC Warranted</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external"></a></p><a href="./pre_jc_survey/labeling_warranted/index.html" class="no-external">
 </a>
 </div>
 </div>

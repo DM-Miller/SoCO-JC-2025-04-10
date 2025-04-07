@@ -17,6 +17,8 @@ listing:
   contents: pre_jc_survey/nccn
 - id: labeling_mcc
   contents: pre_jc_survey/labeling
+- id: labeling_mcc_justified
+  contents: pre_jc_survey/labeling_warranted
 - id: ipi_nivo_barriers
   contents: pre_jc_survey/barriers       
 ---
@@ -147,6 +149,11 @@ listing:
 
 <div class="fade-in">
 :::{#labeling_mcc}
+:::
+</div>
+
+<div class="fade-in">
+:::{#labeling_mcc_justified}
 :::
 </div>
 
