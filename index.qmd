@@ -117,6 +117,10 @@ page-layout: full
         </li>
       </ol>
     </li>
+    <li>
+    4th International MCC Symposium
+     <img src="img/mcc_4.jpg" alt="MCC Symposium image" style="max-width: 100%; height: auto; margin-top: 1rem;">
+    </li>
     <li>Perspectives on the Science</li>
     <li>SoCo JC Timeline</li>
     <li>Pre-JC Survey</li>
