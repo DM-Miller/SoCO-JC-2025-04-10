@@ -15,6 +15,7 @@ dt[[question_var]] <- recode(
   dt[[question_var]],
   "Nivo 1mg Per Kg Ipi 3mg Per Kg Q3 Weeks" = "Nivo 1 mg/kg + Ipi 3 mg/kg q3 weeks",
   "Nivo 3mg Per Kg Ipi 1mg Per Kg Q3 Weeks" = "Nivo 3 mg/kg + Ipi 1 mg/kg q3 weeks",
+  "Nivo 3mg Per Kg-Q2 Weeks Ipi 1mg Per Kg Q6 Weeks" = "Nivo 3 mg/kg q2 weeks + Ipi 1 mg/kg q6 Weeks",
   "Nivo 240mg Q2 Weeks Ipi 1mg Per Kg Q6 Weeks" = "Nivo 240 mg q2 weeks + Ipi 1 mg/kg q6 weeks",
   "Nivo 360mg Q3 Weeks Ipi 1mg Per Kg Q6 Weeks" = "Nivo 360 mg q3 weeks + Ipi 1 mg/kg q6 weeks",
   "I Would Not Use In The First Line" = "I would not use Nivo plus Ipi in the first-line setting",
@@ -26,6 +27,7 @@ dt[[question_var]] <- recode(
 ordered_levels <- c(
   "Nivo 1 mg/kg + Ipi 3 mg/kg q3 weeks",
   "Nivo 3 mg/kg + Ipi 1 mg/kg q3 weeks",
+  "Nivo 3 mg/kg q2 weeks + Ipi 1 mg/kg q6 Weeks",
   "Nivo 240 mg q2 weeks + Ipi 1 mg/kg q6 weeks",
   "Nivo 360 mg q3 weeks + Ipi 1 mg/kg q6 weeks",
   "I would not use Nivo plus Ipi in the first-line setting",
@@ -59,7 +61,7 @@ dosing_plot <- ggplot(dosing_plot_data, aes(x = .data[[question_var]], y = n)) +
     panel.background = element_blank(),
     axis.line = element_line()
   ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 35)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   coord_flip()
 
 dosing_plot

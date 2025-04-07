@@ -57,5 +57,5 @@ barriers_ipi_nivo_plot
 
 <div style="text-align: right; margin-top: 2rem;">
   <a href="../dosing/" class="btn btn-primary">← Previous</a>
-  <a href="../../article/introduction" class="btn btn-primary">Next →</a>
+  <a href="https://dm-miller.github.io/SoCO-Journal-Club/article.html" class="btn btn-primary">Next →</a>
 </div>
