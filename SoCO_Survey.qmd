@@ -13,14 +13,12 @@ listing:
   contents: pre_jc_survey/case_2
 - id: ipi_nivo_denied
   contents: pre_jc_survey/coverage_denied
-- id: nccn_mcc
-  contents: pre_jc_survey/nccn
+- id: nccn_guidelines_mcc
+  contents: pre_jc_survey/nccn_guidelines
 - id: labeling_mcc
   contents: pre_jc_survey/labeling
 - id: labeling_mcc_justified
   contents: pre_jc_survey/labeling_warranted
-- id: nccn_guidelines_mcc
-  contents: pre_jc_survey/nccn_guidelines
 - id: ipi_nivo_barriers
   contents: pre_jc_survey/barriers       
 ---
@@ -145,17 +143,17 @@ listing:
 </div>
 
 <div class="fade-in">
+:::{#nccn_guidelines_mcc}
+:::
+</div>
+
+<div class="fade-in">
 :::{#labeling_mcc}
 :::
 </div>
 
 <div class="fade-in">
 :::{#labeling_mcc_justified}
-:::
-</div>
-
-<div class="fade-in">
-:::{#nccn_guidelines_mcc}
 :::
 </div>
 

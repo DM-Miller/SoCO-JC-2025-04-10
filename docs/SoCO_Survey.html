@@ -239,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-nccn_mcc .list');
+    const listingTargetEl = window.document.querySelector('#listing-nccn_guidelines_mcc .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -252,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-nccn_mcc'] = new List('listing-nccn_mcc', options);
+    window['quarto-listings']['listing-nccn_guidelines_mcc'] = new List('listing-nccn_guidelines_mcc', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -309,34 +309,6 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-labeling_mcc_justified'] = new List('listing-labeling_mcc_justified', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-nccn_guidelines_mcc .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-nccn_guidelines_mcc'] = new List('listing-nccn_guidelines_mcc', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -713,7 +685,7 @@ No matching items
 <div class="fade-in">
 <div id="listing-ipi_nivo_denied" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744025636550" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744034222694" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
 <p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external"></a></p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external">
 <p class="card-img-top"><img src="pre_jc_survey/coverage_denied/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
@@ -732,6 +704,37 @@ No matching items
 </div>
 <div class="metadata">
 <p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external"></a></p><a href="./pre_jc_survey/coverage_denied/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-nccn_guidelines_mcc" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744033943606" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/nccn_guidelines/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">NCCN Guidelines for Ipi/Nivo in MCC</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">
 </a>
 </div>
 </div>
@@ -804,37 +807,6 @@ No matching items
 </div>
 </div>
 <div class="fade-in">
-<div id="listing-nccn_guidelines_mcc" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744033943606" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
-<div class="thumbnail">
-<p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">
-<p class="card-img-top"><img src="pre_jc_survey/nccn_guidelines/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">NCCN Guidelines for Ipi/Nivo in MCC</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">← Previous Next →</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn_guidelines/index.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-<div class="fade-in">
 <div id="barriers">
 
 </div>
@@ -887,35 +859,7 @@ No matching items
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-nccn_mcc">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744025141926" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
-<div class="thumbnail">
-<p><a href="./pre_jc_survey/nccn/index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn/index.html" class="no-external">
-<p class="card-img-top"><img src="pre_jc_survey/nccn/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./pre_jc_survey/nccn/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./pre_jc_survey/nccn/index.html" class="no-external">NCCN Guidelines</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./pre_jc_survey/nccn/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./pre_jc_survey/nccn/index.html" class="no-external">← Previous Next →</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./pre_jc_survey/nccn/index.html" class="no-external"></a></p><a href="./pre_jc_survey/nccn/index.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><div class="quarto-listing quarto-listing-container-default" id="listing-ipi_nivo_barriers">
+<div class="quarto-listing quarto-listing-container-default" id="listing-ipi_nivo_barriers">
 <div class="list quarto-listing-default">
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744024133249" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
