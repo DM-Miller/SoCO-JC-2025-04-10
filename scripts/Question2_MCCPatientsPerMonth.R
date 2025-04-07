@@ -3,7 +3,12 @@ library(tidyverse)
 library(here)
 
 # Load Data
-dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
+dt <- open_recent_file(
+  directory = file.path(
+    files_dir,
+    "Pre_JC_survey_processed"
+  )
+)
 
 dt$mcc_patients_per_month [is.na(dt$mcc_patients_per_month)] <- "Not Answered"
 
@@ -54,7 +59,7 @@ mcc_patients_per_month_plot <- ggplot(
   theme(
     plot.title = element_text(
       hjust = 0.5, face = "bold", size = 20,
-      margin = margin(0, 130, 0, 0)),
+      margin = margin(0, 0, 0, 0)),
     title = element_text(face = "bold", size = 18),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),

@@ -1,7 +1,13 @@
 # Load necessary libraries
 library(tidyverse)
 # Load Data
-dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
+
+dt <- open_recent_file(
+  directory = file.path(
+    files_dir,
+    "Pre_JC_survey_processed"
+  )
+)
 
 # Define the correct order of response categories
 ordered_levels <- c(
@@ -63,3 +69,4 @@ role_plot <- ggplot(
 
 # Print the plot
 role_plot
+

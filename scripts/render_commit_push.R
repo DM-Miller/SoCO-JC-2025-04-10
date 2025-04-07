@@ -26,4 +26,4 @@ render_commit_push <- function() {
 }
 
 # Execute the function
-render_commit_push()
+#render_commit_push()

@@ -1,7 +1,5 @@
-library(tidyverse)
-library(REDCapR)
-library(here)
-
+# Load packages
+source(here::here("scripts/load_packages.R"))
 # Load Data
 
 redcapr_dt <- REDCapR::redcap_read_oneshot(
@@ -11,18 +9,21 @@ redcapr_dt <- REDCapR::redcap_read_oneshot(
 
 dt1 <- redcapr_dt$data
 
-saveRDS(
-  object = dt1,
-  file = file.path(
+save_files(
+  directory = "", # this is b/c files_dir has the relevent information
+  save_object = dt1,
+  filename = "survey_results_pre_test.rds",
+  subD = file.path(
     files_dir,
-    "survey_results_pre_test.rds")
-)
+    "Pre_JC_survey_unprocessed")
+  )
 
 
-dt <- readRDS(
-  file = file.path(
+dt <- open_recent_file(
+  directory = file.path(
     files_dir,
-    "survey_results_pre_test.rds")
+    "Pre_JC_survey_unprocessed"
+  )
 )
 
 dt[,2] <- stringr::str_replace_all(
@@ -290,18 +291,11 @@ for (col in 12:22) {
   )
 }
 
-
-saveRDS(
-  object = dt,
-  file = file.path(
+save_files(
+  directory = "", # this is b/c files_dir has the relevent information
+  save_object = dt,
+  filename = "survey_results_pre_test_processed",
+  subD = file.path(
     files_dir,
-    "survey_results_pre_test_processed.rds")
+    "Pre_JC_survey_processed")
 )
-
-write.csv(
-  x = dt,
-  file = file.path(
-    files_dir,
-    "survey_results_pre_test_processed.csv")
-)
-
