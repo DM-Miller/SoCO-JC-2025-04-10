@@ -49,8 +49,6 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 #| eval: true
 #| echo: false
 #| fig-align: center
-#| fig-width: 16
-#| fig-height: 10
 source(file.path(scripts_dir, "Question2_MCCPatientsPerMonth.R"))
 
 mcc_patients_per_month_plot

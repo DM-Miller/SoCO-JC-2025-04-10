@@ -124,6 +124,62 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-rec_ipi_nivo .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-rec_ipi_nivo'] = new List('listing-rec_ipi_nivo', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-mgmt_case_1 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-mgmt_case_1'] = new List('listing-mgmt_case_1', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -337,7 +393,7 @@ No matching items
 <div class="fade-in">
 <div id="listing-experience" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744017925738" data-listing-reading-time-sort="1" data-listing-word-count-sort="51">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744021653800" data-listing-reading-time-sort="1" data-listing-word-count-sort="47">
 <div class="thumbnail">
 <p><a href="./pre_jc_survey/experience/index.html" class="no-external"></a></p><a href="./pre_jc_survey/experience/index.html" class="no-external">
 <p class="card-img-top"><img src="pre_jc_survey/experience/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
@@ -356,6 +412,68 @@ No matching items
 </div>
 <div class="metadata">
 <p><a href="./pre_jc_survey/experience/index.html" class="no-external"></a></p><a href="./pre_jc_survey/experience/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-rec_ipi_nivo" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744021906679" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external"></a></p><a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/Ipi_nivo_rx_yn/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external">Ipi/Nivo Experience</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external"></a></p><a href="./pre_jc_survey/Ipi_nivo_rx_yn/index.html" class="no-external">
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="fade-in">
+<div id="listing-mgmt_case_1" class="quarto-listing quarto-listing-container-default">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1744021503157" data-listing-reading-time-sort="1" data-listing-word-count-sort="44">
+<div class="thumbnail">
+<p><a href="./pre_jc_survey/case_1/index.html" class="no-external"></a></p><a href="./pre_jc_survey/case_1/index.html" class="no-external">
+<p class="card-img-top"><img src="pre_jc_survey/case_1/index_files/figure-html/patient experience-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./pre_jc_survey/case_1/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./pre_jc_survey/case_1/index.html" class="no-external">Treatment Recommendations #1</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./pre_jc_survey/case_1/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./pre_jc_survey/case_1/index.html" class="no-external">← Previous Next →</a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./pre_jc_survey/case_1/index.html" class="no-external"></a></p><a href="./pre_jc_survey/case_1/index.html" class="no-external">
 </a>
 </div>
 </div>

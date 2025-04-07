@@ -50,7 +50,7 @@ used_ipi_nivo_plot <- ggplot(
   ) +
   ggtitle(str_wrap(
     "Have you recommended Ipi/Nivo for MCC before?",
-    50)
+    60)
   ) +
   xlab("") +
   ylab(paste0(
