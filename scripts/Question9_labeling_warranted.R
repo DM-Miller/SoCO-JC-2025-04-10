@@ -43,7 +43,8 @@ label_justified_plot <- ggplot(label_justified, aes(x = .data[[question_var]], y
   xlab("") +
   ylab(paste0("Number of Respondents (Total = ", sum(label_justified$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
+                              margin = margin(0, 130, 0, 0)),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
