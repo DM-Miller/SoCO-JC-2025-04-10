@@ -8,7 +8,11 @@ listing:
 - id: rec_ipi_nivo
   contents: pre_jc_survey/Ipi_nivo_rx_yn 
 - id: mgmt_case_1
-  contents: pre_jc_survey/case_1       
+  contents: pre_jc_survey/case_1
+- id: mgmt_case_2
+  contents: pre_jc_survey/case_2
+- id: ipi_nivo_barriers
+  contents: pre_jc_survey/barriers       
 ---
 
 
@@ -117,6 +121,16 @@ listing:
 
 <div class="fade-in">
 :::{#mgmt_case_1}
+:::
+</div>
+
+<div class="fade-in">
+:::{#mgmt_case_2}
+:::
+</div>
+
+<div class="fade-in">
+:::{#barriers}
 :::
 </div>
 
