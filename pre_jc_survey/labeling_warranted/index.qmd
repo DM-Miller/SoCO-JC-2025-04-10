@@ -1,0 +1,62 @@
+---
+title: "Ipilimumab Labeling for MCC Warranted"
+include-in-header: 
+  - text: |
+      <style>
+        body {
+          text-align: justify;
+        }
+        h1.title {
+          text-align: center;
+          padding-top: 120px;
+        }
+
+        /* Make plot outputs fill more width */
+        .cell-output-display {
+          max-width: 100% !important;
+        }
+
+        /* Optionally remove left/right padding */
+        main.content {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      </style>
+format:
+  html:
+    theme: default
+    page-layout: full
+---
+
+```{r, source path}
+#| include: false
+#| message: false
+#| warning: false
+source(file.path(scripts_dir, "load_packages.R"))
+```
+
+
+
+```{r load redcap data, warning=FALSE, message=FALSE, echo=FALSE}
+#| eval: true
+source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
+
+```
+
+
+
+```{r patient experience, echo=FALSE}
+#| eval: true
+#| fig-width: 11
+#| fig-height: 6
+#| fig-align: center
+source(file.path(scripts_dir, "Question9_labeling_warranted.R"))
+
+label_justified_plot
+
+```
+
+<div style="text-align: right; margin-top: 2rem;">
+  <a href="../labeling/" class="btn btn-primary">← Previous</a>
+  <a href="../second_line/" class="btn btn-primary">Next →</a>
+</div>
