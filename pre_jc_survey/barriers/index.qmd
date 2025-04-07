@@ -50,7 +50,7 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 #| fig-width: 8
 #| fig-height: 5
 #| fig-align: center
-source(file.path(scripts_dir, "Question11_Barriers.R"))
+source(file.path(scripts_dir, "Question12_Barriers.R"))
 
 barriers_ipi_nivo_plot
 ```
