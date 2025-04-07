@@ -1,5 +1,18 @@
 [
   {
+    "listing": "/article.html",
+    "items": [
+      "/article/Introduction/index.html",
+      "/article/Table_1/index.html",
+      "/article/Table_2/index.html",
+      "/article/Table_3/index.html",
+      "/article/Figure_1/index.html",
+      "/article/Figure_2a/index.html",
+      "/article/Figure_2b/index.html",
+      "/article/Table_4/index.html"
+    ]
+  },
+  {
     "listing": "/SoCO_Survey.html",
     "items": [
       "/pre_jc_survey/role/index.html",
@@ -12,19 +25,6 @@
       "/pre_jc_survey/labeling/index.html",
       "/pre_jc_survey/labeling_warranted/index.html",
       "/pre_jc_survey/barriers/index.html"
-    ]
-  },
-  {
-    "listing": "/article.html",
-    "items": [
-      "/article/Introduction/index.html",
-      "/article/Table_1/index.html",
-      "/article/Table_2/index.html",
-      "/article/Table_3/index.html",
-      "/article/Figure_1/index.html",
-      "/article/Figure_2a/index.html",
-      "/article/Figure_2b/index.html",
-      "/article/Table_4/index.html"
     ]
   }
 ]
