@@ -1,5 +1,5 @@
 ---
-title: "Experience"
+title: "Experience With Merkel Cell Carcinoma"
 include-in-header: 
   - text: |
       <style>
@@ -48,6 +48,8 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 ```{r patient experience}
 #| eval: true
 #| echo: false
+#| fig-width: 8
+#| fig-height: 5
 #| fig-align: center
 source(file.path(scripts_dir, "Question2_MCCPatientsPerMonth.R"))
 
@@ -55,5 +57,5 @@ mcc_patients_per_month_plot
 ```
 <div style="text-align: right; margin-top: 2rem;">
   <a href="../role/" class="btn btn-primary">← Previous</a>
-  <a href="../ipi_nivo_rx_yn/" class="btn btn-primary">Next →</a>
+  <a href="../Ipi_nivo_rx_yn/" class="btn btn-primary">Next →</a>
 </div>

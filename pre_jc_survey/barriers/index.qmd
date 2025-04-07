@@ -47,6 +47,9 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 
 ```{r patient experience, echo=FALSE}
 #| eval: true
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
 source(file.path(scripts_dir, "Question11_Barriers.R"))
 
 barriers_ipi_nivo_plot
