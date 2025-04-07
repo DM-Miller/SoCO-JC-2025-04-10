@@ -101,24 +101,26 @@ ul.task-list li input[type="checkbox"] {
   body {
     background: url('files/soco_jc_hero1.png') center center / cover no-repeat fixed;
     background-color: #000; /* fallback */
-    color: white; /* if needed, based on contrast */
+    color: white;
     text-align: justify;
   }
+
   h1.title {
     text-align: center;
     padding-top: 120px;
   }
 
-  /* Make plot outputs fill more width */
   .cell-output-display {
     max-width: 100% !important;
   }
 
-  /* Optionally remove left/right padding */
   main.content {
+    max-width: 900px;
+    margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
   .hero-title-container {
     text-align: center;
     padding: 5rem 2rem 3rem 2rem;
@@ -136,6 +138,7 @@ ul.task-list li input[type="checkbox"] {
     max-width: 1000px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
   }
+
   .hero-title-box {
     background: none;
     color: black;
@@ -150,6 +153,13 @@ ul.task-list li input[type="checkbox"] {
     margin-top: 4rem;
   }
 
+  @media (max-width: 600px) {
+    main.content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      max-width: 100%;
+    }
+  }
 </style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -238,56 +248,36 @@ window.Quarto = {
 <div class="hero-title-box">
 <p>Nivolumab With or Without Ipilimumab in Patients With Recurrent or Metastatic Merkel Cell Carcinoma:<br><br> A Nonrandomized, Open-Label, International, Multicenter Phase I/II Study</p>
 </div>
-<div id="overview" class="fade-in">
-<section id="introduction" class="level2">
+<section id="introduction" class="level2 fade-in">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<div class="fade-in">
 <div id="Introduction">
 
 </div>
-</div>
 </section>
-</div>
-<div id="overview" class="fade-in">
-<section id="tables-and-figures" class="level2">
+<section id="tables-and-figures" class="level2 fade-in">
 <h2 class="anchored" data-anchor-id="tables-and-figures">Tables and Figures</h2>
-<div class="fade-in">
 <div id="Table_1">
 
 </div>
-</div>
-<div class="fade-in">
 <div id="Table_2">
 
 </div>
-</div>
-<div class="fade-in">
 <div id="Table_3">
 
 </div>
-</div>
-<div class="fade-in">
 <div id="Figure_1">
 
 </div>
-</div>
-<div class="fade-in">
 <div id="Figure_2a">
 
 </div>
-</div>
-<div class="fade-in">
 <div id="Figure_2b">
 
 </div>
-</div>
-<div class="fade-in">
 <div id="Table_4">
 
 </div>
-</div>
 </section>
-</div>
 
 
 

@@ -2,30 +2,34 @@
 title: ""
 page-layout: full
 title-block-banner: false
+format: html
+toc: false
 include-in-header: 
   - text: |
       <style>
         body {
           background: url('files/soco_jc_hero1.png') center center / cover no-repeat fixed;
           background-color: #000; /* fallback */
-          color: white; /* if needed, based on contrast */
+          color: white;
           text-align: justify;
         }
+
         h1.title {
           text-align: center;
           padding-top: 120px;
         }
 
-        /* Make plot outputs fill more width */
         .cell-output-display {
           max-width: 100% !important;
         }
 
-        /* Optionally remove left/right padding */
         main.content {
+          max-width: 900px;
+          margin: 0 auto;
           padding-left: 2rem;
           padding-right: 2rem;
         }
+
         .hero-title-container {
           text-align: center;
           padding: 5rem 2rem 3rem 2rem;
@@ -33,7 +37,7 @@ include-in-header:
           color: white;
           max-width: 100%;
         }
-        
+
         .hero-title-container h1 {
           font-family: 'Playfair Display', serif;
           font-size: clamp(1.6rem, 2.8vw, 2.25rem);
@@ -43,6 +47,7 @@ include-in-header:
           max-width: 1000px;
           text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
+
         .hero-title-box {
           background: none;
           color: black;
@@ -56,10 +61,15 @@ include-in-header:
           max-width: min(95vw, 1200px);
           margin-top: 4rem;
         }
-      
+
+        @media (max-width: 600px) {
+          main.content {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            max-width: 100%;
+          }
+        }
       </style>
-format: html
-toc: false
 listing: 
   - id: content
     contents:
@@ -80,51 +90,33 @@ listing:
   A Nonrandomized, Open-Label, International, Multicenter Phase I/II Study
 </div>
 
-
-
-<div class="fade-in" id="overview">
-## Introduction
 <div class="fade-in">
+## Introduction
 :::{#Introduction}
 :::
 </div>
 
-</div>
-
-<div class="fade-in" id="overview">
-## Tables and Figures
 <div class="fade-in">
+## Tables and Figures
+
 :::{#Table_1}
 :::
-</div>
 
-<div class="fade-in">
 :::{#Table_2}
 :::
-</div>
 
-<div class="fade-in">
 :::{#Table_3}
 :::
-</div>
 
-<div class="fade-in">
 :::{#Figure_1}
 :::
-</div>
 
-<div class="fade-in">
 :::{#Figure_2a}
 :::
-</div>
 
-<div class="fade-in">
 :::{#Figure_2b}
 :::
-</div>
 
-<div class="fade-in">
 :::{#Table_4}
 :::
-</div>
 </div>
