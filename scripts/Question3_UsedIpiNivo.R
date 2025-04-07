@@ -2,35 +2,46 @@
 library(tidyverse)
 library(here)
 
+
 # Load Data
-dt <- readRDS(file.path(files_dir, "survey_results_pre_test_processed.rds"))
+dt <- open_recent_file(
+  directory = file.path(
+    files_dir,
+    "Pre_JC_survey_processed"
+  )
+)
+
 
 # Replace NA values with "Not Answered" before filtering
-dt_used_ctdna <- dt %>%
-  select(used_ctdna) |> 
-  mutate(used_ctdna = replace_na(used_ctdna, "Not Answered"))
+dt_used_ipi_nivo <- dt %>%
+  select(used_ipi_nivo) |> 
+  mutate(used_ipi_nivo = replace_na(used_ipi_nivo, "Not Answered"))
 
 # Filter out "Not Answered" and "I Am Not A Clinician"
-dt_used_ctdna_filtered <- dt_used_ctdna %>%
-  filter(!(used_ctdna %in% c("Not Answered", "I Am Not A Clinician")))
+dt_used_ipi_nivo_filtered <- dt_used_ipi_nivo %>%
+  dplyr::filter(!(used_ipi_nivo %in% c(
+    "Not Answered", 
+    "I Am Not A Clinician",
+    "Not Applicable Clinician"
+    )))
 
 # Define the correct order of response categories
 ordered_levels <- c("Yes", "No")
 
 # Convert to factor with defined order
-dt_used_ctdna_filtered <- dt_used_ctdna_filtered %>%
-  mutate(used_ctdna = factor(used_ctdna, levels = ordered_levels, ordered = TRUE))
+dt_used_ipi_nivo_filtered <- dt_used_ipi_nivo_filtered %>%
+  mutate(used_ipi_nivo = factor(used_ipi_nivo, levels = ordered_levels, ordered = TRUE))
 
 # Count occurrences of each response
-used_ctdna <- dt_used_ctdna_filtered %>%
-  count(used_ctdna, .drop = FALSE) %>%
+used_ipi_nivo <- dt_used_ipi_nivo_filtered %>%
+  count(used_ipi_nivo, .drop = FALSE) %>%
   mutate(prop = round(n / sum(n) * 100, 1))  # Ensuring proportions are calculated correctly
 
 
 # Generate plot
-used_ctdna_plot <- ggplot(
-  used_ctdna,
-  aes(x = used_ctdna, y = n)
+used_ipi_nivo_plot <- ggplot(
+  used_ipi_nivo,
+  aes(x = used_ipi_nivo, y = n)
 ) + 
   geom_col(fill = "steelblue4") + 
   geom_text(
@@ -38,13 +49,13 @@ used_ctdna_plot <- ggplot(
     hjust = -0.1
   ) +
   ggtitle(str_wrap(
-    "Have you used ctDNA in clinical practice?",
+    "Have you recommended Ipi/Nivo for MCC before?",
     50)
   ) +
   xlab("") +
   ylab(paste0(
     "Number of Respondents (Total = ",
-    sum(used_ctdna$n),
+    sum(used_ipi_nivo$n),
     ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold"),
@@ -61,10 +72,10 @@ used_ctdna_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
-    breaks = seq(0, max(used_ctdna$n + 1), by = 2), # Sets breaks at intervals of 2
-    limits = c(0, max(used_ctdna$n + 1))
+    breaks = seq(0, max(used_ipi_nivo$n + 1), by = 2), # Sets breaks at intervals of 2
+    limits = c(0, max(used_ipi_nivo$n + 1))
   ) +
   coord_flip()
 
 # Print the plot
-used_ctdna_plot
+used_ipi_nivo_plot

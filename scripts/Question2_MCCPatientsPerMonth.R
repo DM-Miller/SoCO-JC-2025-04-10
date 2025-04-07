@@ -59,7 +59,7 @@ mcc_patients_per_month_plot <- ggplot(
   theme(
     plot.title = element_text(
       hjust = 0.5, face = "bold", size = 20,
-      margin = margin(0, 0, 0, 0)),
+      margin = margin(0, 130, 0, 0)),
     title = element_text(face = "bold", size = 18),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
