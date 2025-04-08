@@ -49,7 +49,7 @@ barriers_long <- barriers_long |>
   mutate(barriers_ipi_nivo = recode(barriers_ipi_nivo, !!!barriers_labels))
 
 # Step 4: Define explicit ordering of categories
-ordered_levels <- c(
+ordered_levels <- rev(c(
   "Toxicity concerns",
   "Lack of high-level data in MCC",
   "Institutional restrictions or guidelines",
@@ -57,7 +57,8 @@ ordered_levels <- c(
   "Patient preference",
   "Other",
   "No significant barriers"
-)
+  )
+  )
 
 # Step 5: Count occurrences & normalize by total **filtered** responses
 barriers_ipi_nivo_count <- barriers_long |> 
