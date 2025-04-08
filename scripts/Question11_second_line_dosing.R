@@ -18,8 +18,8 @@ dt[[question_var]] <- recode(
   "Nivo 3mg Per Kg-Q2 Weeks Ipi 1mg Per Kg Q6 Weeks" = "Nivo 3 mg/kg q2 weeks + Ipi 1 mg/kg q6 Weeks",
   "Nivo 240mg Q2 Weeks Ipi 1mg Per Kg Q6 Weeks" = "Nivo 240 mg q2 weeks + Ipi 1 mg/kg q6 weeks",
   "Nivo 360mg Q3 Weeks Ipi 1mg Per Kg Q6 Weeks" = "Nivo 360 mg q3 weeks + Ipi 1 mg/kg q6 weeks",
-  "I Would Not Use In The Second Line" = "I would not use Nivo plus Ipi in the second-line setting",
-  "Not Applicable Clinician" = "I am a clinician but I do not manage MCC patients",
+  "I Would Not Use In The First Line" = "I would not use Nivo plus Ipi in the first-line setting",
+  "Not Applicable Clinician" = "I am not sure",
   "I Am Not A Clinician" = "I am not a clinician"
 )
 
@@ -30,8 +30,9 @@ ordered_levels <- c(
   "Nivo 3 mg/kg q2 weeks + Ipi 1 mg/kg q6 Weeks",
   "Nivo 240 mg q2 weeks + Ipi 1 mg/kg q6 weeks",
   "Nivo 360 mg q3 weeks + Ipi 1 mg/kg q6 weeks",
-  "I would not use Nivo plus Ipi in the second-line setting",
-  "I am a clinician but I do not manage MCC patients",
+  "Other",
+  "I am not sure",
+  "I would not use Nivo plus Ipi in the first-line setting",
   "I am not a clinician",
   "Not Answered"
 )

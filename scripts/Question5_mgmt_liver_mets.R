@@ -12,16 +12,26 @@ dt <- open_recent_file(
 question_var <- "mgmt_case_2"
 question_title <- "58M ECOG0, no PMH, presents with left dorsal hand MCC, mets to regional nodes (2) and >20 liver mets. Not interested in clinical trial."
 
+dt[[question_var]] <- recode(
+  dt[[question_var]],
+  "Nivolumab Ipilimumab" = "Nivolumab + Ipilimumab",
+  "Nivolumab Relatlimab" = "Nivolumab + Relatlimab",
+  "Nivolumab Relatlimab Ipilimumab" = "Nivolumab + Relatlimab + Ipilimumab",
+  "Not Sure" = "I am not sure"
+)
+
 # Define the ordered levels exactly as they appear in the form
+
 ordered_levels <- c(
   "Pembrolizumab",
   "Avelumab",
   "Retifanlimab",
   "Nivolumab",
-  "Nivolumab Ipilimumab",
-  "Nivolumab Relatlimab",
-  "Nivolumab Relatlimab Ipilimumab",
+  "Nivolumab + Ipilimumab",
+  "Nivolumab + Relatlimab",
+  "Nivolumab + Relatlimab + Ipilimumab",
   "Other",
+  "I am not sure",
   "Not Applicable Clinician",
   "I Am Not A Clinician"
 )

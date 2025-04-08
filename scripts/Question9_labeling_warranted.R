@@ -16,7 +16,8 @@ dt[[question_var]] <- recode(
   "Pd1 Refractory Setting" = "Anti-PD-1-Refractory Setting",
   "Both 1l And 2l" = "Both First-Line and Second-Line Setting",
   "Not Applicable Clinician" = "I Am A Clinician But I Do Not Manage MCC Patients",
-  "First Line Setting" = "First-Line Setting"
+  "First Line Setting" = "First-Line Setting",
+  "Not Sure" = "I Am Not Sure"
 )
 
 # Define the order of answer choices
@@ -25,6 +26,7 @@ ordered_levels <- c(
   "Anti-PD-1-Refractory Setting",
   "Both First-Line and Second-Line Setting",
   "Data Does Not Yet Support Labeling",
+  "I Am Not Sure",
   "I Am A Clinician But I Do Not Manage MCC Patients",
   "I Am Not A Clinician",
   "Not Answered"
