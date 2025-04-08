@@ -14,6 +14,7 @@ question_var <- "coverage_ipi_nivo"
 title <- "Have you (or your MDC team) recommended Ipi/Nivo for a patient and had it ultimately denied by a payor (e.g. even after a peer-to-peer)?"
 
 # Clean up missing or long-form answers if needed
+dt[[question_var]][is.na(dt[[question_var]])] <- "Not Answered"
 dt[[question_var]] <- recode(
   dt[[question_var]],
   "Not Applicable Clinician" = "I Am a Clinician But Have Not Recommended Nivo Plus Ipi",
@@ -26,7 +27,8 @@ ordered_levels <- c(
   "No",
   "I am not sure",
   "I Am a Clinician But Have Not Recommended Nivo Plus Ipi",
-  "I Am Not A Clinician"
+  "I Am Not A Clinician",
+  "Not Answered"
 )
 
 # Ensure factor levels are set before counting

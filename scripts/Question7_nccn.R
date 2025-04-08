@@ -13,8 +13,10 @@ dt <- open_recent_file(
 dt$nccn_ipi_nivo[is.na(dt$nccn_ipi_nivo)] <- "Not Answered"
 
 # QUESTION VARIABLE AND TITLE (modular for reuse)
+
 question_var <- "nccn_ipi_nivo"
 title <- "Are you aware that the NCCN guidelines include Ipi/Nivo in the category of 'Useful in Certain Circumstances'?"
+dt[[question_var]][is.na(dt[[question_var]])] <- "Not Answered"
 
 # Define order of responses
 ordered_levels <- rev(c(

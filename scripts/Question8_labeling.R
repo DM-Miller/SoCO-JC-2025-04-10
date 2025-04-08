@@ -20,12 +20,13 @@ dt[[question_var]][dt[[question_var]] == "Not Applicable Clinician"] <-
   "I Am A Clinician But I Do Not Manage MCC Patients"
 
 # Set desired order of levels
-ordered_levels <- c(
+ordered_levels <- rev(c(
   "Not Answered",
   "I Am Not A Clinician",
   "I Am A Clinician But I Do Not Manage MCC Patients",
   "No",
   "Yes"
+  )
 )
 
 # Factor and summarize

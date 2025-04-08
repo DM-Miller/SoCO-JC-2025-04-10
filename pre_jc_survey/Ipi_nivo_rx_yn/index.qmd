@@ -1,5 +1,5 @@
 ---
-title: "Ipi/Nivo Experience"
+title: "Experience With Nivolumab Plus Ipilimumab in MCC"
 include-in-header: 
   - text: |
       <style>
@@ -47,8 +47,8 @@ source(file.path(scripts_dir, "REDCap Pre JC Questions.R"))
 
 ```{r patient experience, echo=FALSE}
 #| eval: true
-#| fig-width: 8
-#| fig-height: 5
+#| fig-width: 11
+#| fig-height: 6
 #| fig-align: center
 source(file.path(scripts_dir, "Question3_UsedIpiNivo.R"))
 

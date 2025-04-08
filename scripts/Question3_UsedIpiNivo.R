@@ -1,81 +1,63 @@
-# Load necessary libraries
 library(tidyverse)
 library(here)
 
-
 # Load Data
 dt <- open_recent_file(
-  directory = file.path(
-    files_dir,
-    "Pre_JC_survey_processed"
-  )
+  directory = file.path(files_dir, "Pre_JC_survey_processed")
 )
 
+# Define the variable and plot title
+question_var <- "used_ipi_nivo"
+question_title <- "Have you recommended Ipi/Nivo for MCC before?"
 
-# Replace NA values with "Not Answered" before filtering
-dt_used_ipi_nivo <- dt %>%
-  select(used_ipi_nivo) |> 
-  mutate(used_ipi_nivo = replace_na(used_ipi_nivo, "Not Answered"))
+# Optional recoding
+dt[[question_var]] <- recode(
+  dt[[question_var]],
+  "I Am Not A Clinician" = "I am not a clinician",
+  "Not Applicable Clinician" = "I am a clinician but do not manage MCC patients"
+)
 
-# Filter out "Not Answered" and "I Am Not A Clinician"
-dt_used_ipi_nivo_filtered <- dt_used_ipi_nivo %>%
-  dplyr::filter(!(used_ipi_nivo %in% c(
-    "Not Answered", 
-    "I Am Not A Clinician",
-    "Not Applicable Clinician"
-    )))
+# Define the order of response levels
+ordered_levels <- rev(c(
+  "Not Answered", 
+  "I am not a clinician",
+  "I am a clinician but do not manage MCC patients",
+  "No",
+  "Yes"
+))
 
-# Define the correct order of response categories
-ordered_levels <- c("Yes", "No")
+# Clean and prepare the data
+used_ipi_nivo_summary <- dt |>
+  mutate({{ question_var }} := replace_na(.data[[question_var]], "Not Answered")) |>
+  mutate({{ question_var }} := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |>
+  count(.data[[question_var]], name = "n", .drop = FALSE) |>
+  mutate(prop = round(n / sum(n) * 100, 1))
 
-# Convert to factor with defined order
-dt_used_ipi_nivo_filtered <- dt_used_ipi_nivo_filtered %>%
-  mutate(used_ipi_nivo = factor(used_ipi_nivo, levels = ordered_levels, ordered = TRUE))
-
-# Count occurrences of each response
-used_ipi_nivo <- dt_used_ipi_nivo_filtered %>%
-  count(used_ipi_nivo, .drop = FALSE) %>%
-  mutate(prop = round(n / sum(n) * 100, 1))  # Ensuring proportions are calculated correctly
-
-
-# Generate plot
-used_ipi_nivo_plot <- ggplot(
-  used_ipi_nivo,
-  aes(x = used_ipi_nivo, y = n)
-) + 
-  geom_col(fill = "steelblue4") + 
-  geom_text(
-    aes(label = paste0(prop, "%")),
-    hjust = -0.1
-  ) +
-  ggtitle(str_wrap(
-    "Have you recommended Ipi/Nivo for MCC before?",
-    60)
-  ) +
+# Generate the plot
+used_ipi_nivo_plot <- ggplot(used_ipi_nivo_summary, aes(x = .data[[question_var]], y = n)) +
+  geom_col(fill = "steelblue4") +
+  geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
+  ggtitle(str_wrap(question_title, 60)) +
   xlab("") +
-  ylab(paste0(
-    "Number of Respondents (Total = ",
-    sum(used_ipi_nivo$n),
-    ")")) +
+  ylab(paste0("Number of Respondents (Total = ", sum(used_ipi_nivo_summary$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    title = element_text(face = "bold", size = 18),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
-    axis.text.y = element_text(face = "bold", size = 16),
-    panel.grid.major = element_blank(), 
+    axis.text.y = element_text(face = "bold", size = 14),
+    panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
-    panel.background = element_blank(), 
+    panel.background = element_blank(),
     axis.line = element_line(),
     plot.margin = margin(0.2, 0, 0.2, 0, "cm")
   ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = seq(0, max(used_ipi_nivo$n + 1), by = 2), # Sets breaks at intervals of 2
-    limits = c(0, max(used_ipi_nivo$n + 1))
+    breaks = seq(0, max(used_ipi_nivo_summary$n + 1), by = 2),
+    limits = c(0, max(used_ipi_nivo_summary$n + 1))
   ) +
   coord_flip()
 
-# Print the plot
+# Display the plot
 used_ipi_nivo_plot

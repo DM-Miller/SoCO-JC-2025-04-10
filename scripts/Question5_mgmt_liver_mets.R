@@ -11,7 +11,7 @@ dt <- open_recent_file(
 # Define the variable name for this question
 question_var <- "mgmt_case_2"
 question_title <- "58M ECOG0, no PMH, presents with left dorsal hand MCC, mets to regional nodes (2) and >20 liver mets. Not interested in clinical trial."
-
+dt[[question_var]][is.na(dt[[question_var]])] <- "Not Answered"
 dt[[question_var]] <- recode(
   dt[[question_var]],
   "Nivolumab Ipilimumab" = "Nivolumab + Ipilimumab",
@@ -33,7 +33,8 @@ ordered_levels <- c(
   "Other",
   "I am not sure",
   "Not Applicable Clinician",
-  "I Am Not A Clinician"
+  "I Am Not A Clinician",
+  "Not Answered"
 )
 
 # Clean and prepare the data
