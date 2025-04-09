@@ -89,6 +89,8 @@ listing:
   font-size: 2rem;
   line-height: 1.6;
   text-align: center;
+  transform: translateX(100px);
+
 }
 
  /* Fade-in effect for listings */

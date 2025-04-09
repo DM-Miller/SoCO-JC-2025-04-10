@@ -21,7 +21,7 @@ redcapr_dt <- REDCapR::redcap_read_oneshot(
 dt1 <- redcapr_dt$data
 
 save_files(
-  directory = "", # this is b/c files_dir has the relevent information
+  directory = "", # this is b/c files_dir has the relevant information
   save_object = dt1,
   filename = "survey_results_pre_test.rds",
   subD = file.path(

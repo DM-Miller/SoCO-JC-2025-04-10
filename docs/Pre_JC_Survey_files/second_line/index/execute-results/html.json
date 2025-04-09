@@ -1,0 +1,17 @@
+{
+  "hash": "7da1544dac3d159fe7b72c6410f48d8d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Nivo Plus Ipi Dosing in Second-Line MCC\"\ninclude-in-header: \n  - text: |\n      <style>\n        body {\n          text-align: justify;\n        }\n        h1.title {\n          text-align: center;\n          padding-top: 120px;\n        }\n\n        /* Make plot outputs fill more width */\n        .cell-output-display {\n          max-width: 100% !important;\n        }\n\n        /* Optionally remove left/right padding */\n        main.content {\n          padding-left: 2rem;\n          padding-right: 2rem;\n        }\n      </style>\nformat:\n  html:\n    theme: default\n    page-layout: full\n---\n\n\n\n::: {.cell}\n\n:::\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](index_files/figure-html/patient experience-1.png){fig-align='center' width=1056}\n:::\n:::\n\n\n\n<div style=\"text-align: right; margin-top: 2rem;\">\n  <a href=\"../first_line/\" class=\"btn btn-primary\">← Previous</a>\n  <a href=\"../barriers/\" class=\"btn btn-primary\">Next →</a>\n</div>",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

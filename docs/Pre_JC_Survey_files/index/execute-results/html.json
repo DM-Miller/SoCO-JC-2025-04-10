@@ -1,0 +1,17 @@
+{
+  "hash": "5e1eb4b721a517d11f005dfe59f61508",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"\"\ninclude-in-header: \n  - text: |\n      <style>\n        body {\n          text-align: justify;\n        }\n        h1.title {\n          text-align: center;\n          padding-top: 120px; /* Add space for the draft banner */\n        }\n      </style>\nformat: html\n---\n\n::: {.cell}\n\n:::\n\n\n\n::: {.cell}\n\n:::\n\n\n\n---\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/role-1.png){width=672}\n:::\n:::\n\n\n\n---\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/patient experience-1.png){width=672}\n:::\n:::\n\n---",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
