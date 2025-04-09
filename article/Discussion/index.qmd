@@ -44,7 +44,7 @@ toc: false
 
 ## NCCN Guidelines for Systemic Therapy
 
-![](img/NCCN_systemic_therapy.png)
+![](../../img/NCCN_systemic_therapy.png)
 
 :::
 
@@ -52,7 +52,7 @@ toc: false
 
 ## Checkmate 067
 
-![](img/checkmate_067.png)
+![](../../img/checkmate_067.png)
 
 :::
 
@@ -60,7 +60,7 @@ toc: false
 
 ## Checkmate-8HW
 
-![](img/checkmate-8HW.png)
+![](../../img/checkmate-8HW.png)
 :::
 
 <div class="nav-buttons">

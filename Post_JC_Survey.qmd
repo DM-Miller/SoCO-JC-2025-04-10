@@ -62,26 +62,4 @@ mgmt_2_plot
 
 ### Paul/Sunandna
 
-
-::: {.callout-note appearance="minimal" collapse="true"}
-
-## NCCN Guidelines for Systemic Therapy
-
-![](img/NCCN_systemic_therapy.png)
-
-:::
-
-::: {.callout-note appearance="minimal" collapse="true"}
-
-## Checkmate 067
-
-![](img/checkmate_067.png)
-
-:::
-
-::: {.callout-note appearance="minimal" collapse="true"}
-
-## Checkmate-8HW
-
-![](img/checkmate-8HW.png)
-:::
+[Click Here](https://dm-miller.github.io/SoCO-Journal-Club/article/Discussion/)
