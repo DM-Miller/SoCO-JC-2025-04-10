@@ -48,6 +48,16 @@ mgmt_1_plot
 ```
 ---
 
+```{r Manage liver mets dz}
+#| eval: true
+
+source(file.path(scripts_dir, "Post JC Question3_mgmt_liver_mets.R"))
+
+mgmt_2_plot
+```
+
+---
+
 ## Discussion
 
 ### Paul/Sunandna

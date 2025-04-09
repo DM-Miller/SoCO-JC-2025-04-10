@@ -64,8 +64,8 @@ nccn_ipi_nivo_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(plot_data$n + 0.5))
+    breaks = seq(0, max(plot_data$n) + 1, by = 2),
+    limits = c(0, max(plot_data$n + 1))
   ) +
   coord_flip()
 

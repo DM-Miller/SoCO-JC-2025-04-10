@@ -38,21 +38,21 @@ ordered_levels <- c(
 )
 
 # Clean and prepare the data
-mgmt_case_2_summary <- dt |> 
+plot_data <- dt |> 
   drop_na(all_of(question_var)) |> 
   mutate(!!question_var := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |> 
   count(.data[[question_var]], name = "n", .drop = FALSE) |> 
   mutate(prop = round(n / sum(n) * 100))
 
 mgmt_2_plot <- ggplot(
-  mgmt_case_2_summary,
+  plot_data,
   aes(x = .data[[question_var]], y = n)
 ) +
   geom_col(fill = "steelblue4") +
   geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
   ggtitle(str_wrap(question_title, width = 60)) +
   xlab("") +
-  ylab(paste0("Number of Respondents (Total = ", sum(mgmt_case_2_summary$n), ")")) +
+  ylab(paste0("Number of Respondents (Total = ", sum(plot_data$n), ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
                               margin = margin(0, 130, 0, 0)),
@@ -67,6 +67,10 @@ mgmt_2_plot <- ggplot(
     plot.margin = margin(0.2, 0, 0.2, 0, "cm")
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
+  scale_y_continuous(
+    breaks = seq(0, max(plot_data$n), by = 1),
+    limits = c(0, max(plot_data$n + 1))
+  ) +
   coord_flip()
 
 # Display the plot
