@@ -1,10 +1,10 @@
-# Load necessary libraries
-library(tidyverse)
-library(here)
-library(forcats)  # For factor reordering
-
-# Load Data
-dt2 <- readRDS(here("files", "survey_results_post_test_processed.rds"))
+# Load the processed survey dataset
+dt2 <- open_recent_file(
+  directory = file.path(
+    files_dir,
+    "Post_JC_survey_processed"
+  )
+)
 
 # Standardize response categories
 dt2 <- dt2 |> 

@@ -1,0 +1,47 @@
+---
+title: ""
+format:
+  revealjs: 
+    scrollable: true
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+---
+
+```{r}
+source(here::here("scripts/load_packages.R"))
+```
+
+
+::: {style="text-align: center; margin-top: 5em"}
+[**REDCap Survey**]{style="font-size:80px"}
+
+https://redcap.link/wcp83ak8
+:::
+
+---
+
+
+```{r load post JC redcap data, warning=FALSE, message=FALSE, echo=FALSE}
+#| eval: true
+
+source(file.path(scripts_dir, "REDCap Post JC Questions.R"))
+```
+
+```{r change practice}
+#| eval: true
+
+source(file.path(scripts_dir, "Change Practice.R"))
+
+practice_plot
+```
+
+---
+```{r Manage oligo met dz}
+#| eval: true
+
+source(file.path(scripts_dir, "Post JC Question2_mgmt_oligo_met.R"))
+
+mgmt_1_plot
+```

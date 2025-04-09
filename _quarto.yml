@@ -14,9 +14,11 @@ website:
         href: https://cutaneousoncology.shinyapps.io/soco_journal_club_timeline
         target: _blank
       - text: Pre Journal Club Survey
-        href: SoCO_Survey.qmd
+        href: Pre_JC_Survey.qmd
       - text: Article
         href: article.qmd
+      - text: Post Journal Club Survey
+        href: Post_JC_Survey.qmd
       
 
 format:
