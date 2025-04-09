@@ -38,6 +38,7 @@ practice_plot
 ```
 
 ---
+
 ```{r Manage oligo met dz}
 #| eval: true
 
@@ -45,9 +46,9 @@ source(file.path(scripts_dir, "Post JC Question2_mgmt_oligo_met.R"))
 
 mgmt_1_plot
 ```
-
 ---
 
 ## Discussion
 
 ### Paul/Sunandna
+
