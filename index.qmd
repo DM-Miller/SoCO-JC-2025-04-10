@@ -133,6 +133,7 @@ page-layout: full
   <li class="fade-section">Pre-JC Survey</li>
   <li class="fade-section">Main Paper</li>
   <li class="fade-section">Post-JC Survey</li>
+  <li class="fade-section">Discussion</li>
 </ol>
 
 </div>

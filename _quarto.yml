@@ -4,7 +4,7 @@ project:
 
 
 website:
-  title: "Society of Cutaneous Oncology Journal Club"
+  title: "SoCO Journal Club"
   navbar:
     right:
       - text: Perspectives on the Science
