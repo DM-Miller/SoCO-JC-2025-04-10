@@ -58,7 +58,7 @@ include-in-header:
           font-size: clamp(1.5rem, 2.2vw, 2.25rem);
           font-weight: 700;
           line-height: 1.4;
-          max-width: min(95vw, 1200px);
+          max-width: min(95vw, 900px);
           margin-top: 4rem;
         }
 
