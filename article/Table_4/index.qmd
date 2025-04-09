@@ -36,5 +36,5 @@ toc: false
 
 <div style="text-align: right; margin-top: 2rem;">
   <a href="../Figure_2b/" class="btn btn-primary">← Previous</a>
-  <a href="../Discussion/" class="btn btn-primary">Next →</a>
+  <a href="https://dm-miller.github.io/SoCO-Journal-Club/Post_JC_Survey.html#/" class="btn btn-primary">Next →</a>
 </div>
