@@ -89,7 +89,7 @@ listing:
   font-size: 2rem;
   line-height: 1.6;
   text-align: center;
-  transform: translateX(90px);
+  transform: translateX(80px);
 
 }
 
