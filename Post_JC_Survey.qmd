@@ -34,7 +34,7 @@ source(file.path(scripts_dir, "REDCap Post JC Questions.R"))
 
 source(file.path(scripts_dir, "Change Practice.R"))
 
-practice_plot
+change_practice_plot
 ```
 
 ---
@@ -62,3 +62,18 @@ mgmt_2_plot
 
 ### Paul/Sunandna
 
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Checkmate 067
+
+![](img/checkmate_067.png)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Checkmate-8HW
+
+![](img/checkmate-8HW.png)
+:::
