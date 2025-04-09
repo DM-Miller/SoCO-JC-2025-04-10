@@ -50,13 +50,25 @@ toc: false
 
 ## Shailender/Paul
 
-<!-- Button 1 -->
-<button id="show-plot-btn-1" class="btn btn-primary" style="margin-bottom: 1rem;">
-  Efficacy of ICI in MCC
-</button>
+::: {.callout-note appearance="minimal" collapse="true"}
 
-<!-- Plot 1 (initially hidden) -->
-<div id="hidden-plot-1" class="fade-in-plot" style="display: none;">
+## Monotherapy Nivolumab Schema
+
+![](../../img/schema_monotherapy_cohort.jpg)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Nivolumab Plus Ipilimumab Schema
+
+![](../../img/schema_ipi_nivo_cohort.jpg)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Efficacy of ICI in MCC
 
 ```{r}
 #| echo: false
@@ -69,16 +81,11 @@ mcc_systemic_1L_avg_gt
 
 ```
 
-</div>
+:::
 
-<!-- Button 2 --> 
+::: {.callout-note appearance="minimal" collapse="true"}
 
-<button id="show-plot-btn-2" class="btn btn-primary" style="margin: 2rem 0 1rem;"> 
-   Efficacy of ICI in MCC By N 
-</button> 
-
-<!-- Plot 2 (initially hidden) --> 
-<div id="hidden-plot-2" class="fade-in-plot" style="display: none;"> 
+## Efficacy of ICI in MCC, Ordered By Sample Size
 
 ```{r} 
 #| echo: false 
@@ -88,7 +95,12 @@ source(here::here("scripts/Efficacy of ICI in MCC.R"))
 mcc_systemic_1L_n_gt 
 ``` 
 
-</div> 
+:::
+
+
+
+
+
 
 <!-- Navigation Button --> 
 <div class="nav-buttons"> <a href="../Table_1/" class="btn btn-primary">Next →</a> 
