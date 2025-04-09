@@ -89,7 +89,8 @@ listing:
   font-size: 2rem;
   line-height: 1.6;
   text-align: center;
-  transform: translateX(100px);
+  padding-left: calc(0.75rem + 100px); /* preserves your padding, adds spacing */
+  transform: none;
 
 }
 
@@ -114,7 +115,12 @@ listing:
       font-size: clamp(1.8rem, 6vw, 2.5rem);
     }
   }
-  
+  @media (max-width: 768px) {
+    .scroll-content {
+      padding-left: 1rem; /* Reset to mobile-friendly */
+    }
+  }
+
 </style>
 
 <div class="hero-container" id="hero-bg"></div>

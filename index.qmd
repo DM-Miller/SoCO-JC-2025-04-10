@@ -159,7 +159,7 @@ page-layout: full
           entry.target.classList.add("visible");
         }
       });
-    }, { threshold: 0.8 });
+    }, { threshold: 0.9 });
 
     sections.forEach(section => observer.observe(section));
   });
