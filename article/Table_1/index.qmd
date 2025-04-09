@@ -34,6 +34,15 @@ toc: false
 
 ![](../../img/table_1.jpg)
 
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Notes
+
+The NIVO monotherapy cohort had a numerically lower proportion of patients with adverse prognostic factors than the combination treatment cohort, including age ≥65 years (60% v 74%, respectively), an ECOG PS of 1 (40% v 63%), stage IV disease (80% v 93%), virus-negative MCC (28% v 42%), and tumor burden at baseline (median, 55.5 v 72 mm; Table 1). However, the monotherapy cohort had a higher proportion of patients who had previously received systemic therapy for MCC than the combination cohort (40% v 23%). Among those who had received previous systemic therapy, most had
+received chemotherapy
+
+:::
+
 <div style="text-align: right; margin-top: 2rem;">
   <a href="../Introduction/" class="btn btn-primary">← Previous</a>
   <a href="../Table_2/" class="btn btn-primary">Next →</a>

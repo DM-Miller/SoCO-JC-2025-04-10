@@ -34,6 +34,23 @@ toc: false
 
 ![](../../img/table_4.jpg)
 
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Notes
+
+Nine of 25 patients (36%) in the NIVO cohort and 21 of 42 patients (50%) in the NIVO 1 IPI cohort required concomitant immunosuppressant use because of an immune-related adverse event.
+
+There was one treatment-related death in each cohort: pneumonitis in the NIVO cohort and GI motility disorder because of enteric neuropathy in the NIVO 1 IPI cohort, the latter of which has been reported elsewhere.
+
+Among patients who discontinued treatment for any reason other than disease progression, one of 18 patients (5.5%)
+in the NIVO cohort and two of 28 patients (7.1%) in the NIVO 1 IPI cohort subsequently experienced disease pro-
+gression.
+
+:::
+
+
+
 <div style="text-align: right; margin-top: 2rem;">
   <a href="../Figure_2b/" class="btn btn-primary">← Previous</a>
   <a href="https://dm-miller.github.io/SoCO-Journal-Club/Post_JC_Survey.html#/" class="btn btn-primary">Next →</a>
