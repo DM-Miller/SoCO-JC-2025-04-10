@@ -61,13 +61,13 @@ ordered_levels <- rev(c(
   )
 
 # Step 5: Count occurrences & normalize by total **filtered** responses
-barriers_ipi_nivo_count <- barriers_long |> 
+plot_data <- barriers_long |> 
   count(barriers_ipi_nivo) |> 
   mutate(prop = round(n / nrow(filtered_dt) * 100)) |>  # Normalize by filtered responses
   mutate(barriers_ipi_nivo = factor(barriers_ipi_nivo, levels = ordered_levels, ordered = TRUE)) 
 
 # Step 6: Create Plot
-barriers_ipi_nivo_plot <- barriers_ipi_nivo_count |> 
+barriers_ipi_nivo_plot <- plot_data |> 
   ggplot(
     aes(x = barriers_ipi_nivo,
         y = n)
@@ -99,8 +99,8 @@ barriers_ipi_nivo_plot <- barriers_ipi_nivo_count |>
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = seq(0, max(barriers_ipi_nivo_count$n + 1), by = 2), # Sets breaks at intervals of 2
-    limits = c(0, max(barriers_ipi_nivo_count$n + 1)) # Adjusts upper limit for spacing
+    breaks = seq(0, max(plot_data$n + 1), by = 2), # Sets breaks at intervals of 2
+    limits = c(0, max(plot_data$n + 1)) # Adjusts upper limit for spacing
   ) +
   coord_flip() 
 

@@ -9,7 +9,7 @@ dt <- open_recent_file(
 # Define the variable name for this question
 question_var <- "mgmt_case_1"
 question_title <- "58M ECOG0, no PMH, mets to regional nodes (2) and solitary adrenal met. Not interested in trial. Based on today's discussion, what would you likely recommend?"
-
+dt[[question_var]][is.na(dt[[question_var]])] <- "Not Answered"
 dt[[question_var]] <- recode(
   dt[[question_var]],
   "Nivolumab Ipilimumab" = "Nivolumab + Ipilimumab",
@@ -31,7 +31,8 @@ ordered_levels <- c(
   "Other",
   "I am not sure",
   "Not Applicable Clinician",
-  "I Am Not A Clinician"
+  "I Am Not A Clinician",
+  "Not Answered"
 )
 
 # Clean and prepare the data
@@ -64,6 +65,10 @@ mgmt_1_plot <- ggplot(
     plot.margin = margin(0.2, 0, 0.2, 0, "cm")
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
+  scale_y_continuous(
+    breaks = seq(0, max(mgmt_case_1_summary$n), by = 1),
+    limits = c(0, max(mgmt_case_1_summary$n + 1))
+  ) +
   coord_flip()
 
 # Display the plot

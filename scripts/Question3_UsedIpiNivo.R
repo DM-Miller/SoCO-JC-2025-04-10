@@ -27,19 +27,19 @@ ordered_levels <- rev(c(
 ))
 
 # Clean and prepare the data
-used_ipi_nivo_summary <- dt |>
+plot_data <- dt |>
   mutate({{ question_var }} := replace_na(.data[[question_var]], "Not Answered")) |>
   mutate({{ question_var }} := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |>
   count(.data[[question_var]], name = "n", .drop = FALSE) |>
   mutate(prop = round(n / sum(n) * 100, 1))
 
 # Generate the plot
-used_ipi_nivo_plot <- ggplot(used_ipi_nivo_summary, aes(x = .data[[question_var]], y = n)) +
+used_ipi_nivo_plot <- ggplot(plot_data, aes(x = .data[[question_var]], y = n)) +
   geom_col(fill = "steelblue4") +
   geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
   ggtitle(str_wrap(question_title, 60)) +
   xlab("") +
-  ylab(paste0("Number of Respondents (Total = ", sum(used_ipi_nivo_summary$n), ")")) +
+  ylab(paste0("Number of Respondents (Total = ", sum(plot_data$n), ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
     axis.title.x = element_text(face = "bold", size = 16),
@@ -54,8 +54,8 @@ used_ipi_nivo_plot <- ggplot(used_ipi_nivo_summary, aes(x = .data[[question_var]
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = seq(0, max(used_ipi_nivo_summary$n + 1), by = 2),
-    limits = c(0, max(used_ipi_nivo_summary$n + 1))
+    breaks = seq(0, max(plot_data$n + 1), by = 2),
+    limits = c(0, max(plot_data$n + 1))
   ) +
   coord_flip()
 

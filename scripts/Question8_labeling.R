@@ -30,19 +30,19 @@ ordered_levels <- rev(c(
 )
 
 # Factor and summarize
-df_plot <- dt |>
+plot_data <- dt |>
   mutate(!!question_var := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |>
   count(!!sym(question_var), .drop = FALSE) |>
   rename(x = !!sym(question_var)) |>
   mutate(prop = round(n / sum(n) * 100))
 
 # Generate plot
-ipi_nivo_label_plot <- ggplot(df_plot, aes(x = x, y = n)) +
+ipi_nivo_label_plot <- ggplot(plot_data, aes(x = x, y = n)) +
   geom_col(fill = "steelblue4") +
   geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
   ggtitle(str_wrap(title, 65)) +
   xlab("") +
-  ylab(paste0("Number of Respondents (Total = ", sum(df_plot$n), ")")) +
+  ylab(paste0("Number of Respondents (Total = ", sum(plot_data$n), ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
                               margin = margin(0, 130, 0, 0)),
@@ -58,8 +58,8 @@ ipi_nivo_label_plot <- ggplot(df_plot, aes(x = x, y = n)) +
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(df_plot$n + 0.5))
+    breaks = seq(0, max(plot_data$n) + 1, by = 2),
+    limits = c(0, max(plot_data$n + 1))
   ) +
   coord_flip()
 

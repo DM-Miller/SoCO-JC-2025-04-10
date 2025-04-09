@@ -67,7 +67,8 @@ mcc_patients_per_month_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
+#    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
+    breaks = seq(1, max(response_summary$n), by = 1),
     limits = c(0, max(response_summary$n + 0.5))
   ) +
   coord_flip()

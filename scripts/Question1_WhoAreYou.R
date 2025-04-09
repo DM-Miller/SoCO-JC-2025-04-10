@@ -25,19 +25,19 @@ ordered_levels <- c(
   "Not Answered"
 )
 # Clean and prepare data
-who_are_you_summary <- dt |>
+plot_data <- dt |>
   drop_na(all_of(question_var)) |> 
   mutate({{ question_var }} := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |> 
   count(.data[[question_var]], name = "n", .drop = FALSE) |> 
   mutate(prop = round(n / sum(n) * 100))
 
 # Generate plot
-role_plot <- ggplot(who_are_you_summary, aes(x = .data[[question_var]], y = n)) +
+role_plot <- ggplot(plot_data, aes(x = .data[[question_var]], y = n)) +
   geom_col(fill = "steelblue4") +
   geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
   ggtitle(str_wrap(question_title, width = 60)) +
   xlab("") +
-  ylab(paste0("Number of Respondents (Total = ", sum(who_are_you_summary$n), ")")) +
+  ylab(paste0("Number of Respondents (Total = ", sum(plot_data$n), ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 22,
                               margin = margin(0, 150, 0, 0)),
@@ -53,8 +53,8 @@ role_plot <- ggplot(who_are_you_summary, aes(x = .data[[question_var]], y = n)) 
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(who_are_you_summary$n + 0.2))
+    breaks = seq(0, max(plot_data$n), by = 1),
+    limits = c(0, max(plot_data$n + 1))
   ) +
   coord_flip()
 

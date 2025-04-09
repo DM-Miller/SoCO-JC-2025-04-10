@@ -32,7 +32,7 @@ ordered_levels <- c(
 )
 
 # Ensure factor levels are set before counting
-coverage_plot_data <- dt |> 
+plot_data <- dt |> 
   drop_na(!!sym(question_var)) |> 
   mutate(!!sym(question_var) := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |> 
   count(!!sym(question_var), .drop = FALSE) |> 
@@ -40,7 +40,7 @@ coverage_plot_data <- dt |>
 
 # Create the plot
 coverage_ipi_nivo_plot <- ggplot(
-  coverage_plot_data,
+  plot_data,
   aes(x = .data[[question_var]], y = n)
 ) + 
   geom_col(fill = "steelblue4") + 
@@ -52,7 +52,7 @@ coverage_ipi_nivo_plot <- ggplot(
   xlab("") +
   ylab(paste0(
     "Number of Respondents (Total = ",
-    sum(coverage_plot_data$n),
+    sum(plot_data$n),
     ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
@@ -68,8 +68,8 @@ coverage_ipi_nivo_plot <- ggplot(
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(coverage_plot_data$n + 0.5))
+    breaks = seq(0, max(plot_data$n), by = 1),
+    limits = c(0, max(plot_data$n + 1))
   ) +
   coord_flip()
 

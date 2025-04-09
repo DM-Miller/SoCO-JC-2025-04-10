@@ -38,18 +38,18 @@ ordered_levels <- c(
 )
 
 # Tabulate counts and proportions
-dosing_plot_data <- dt |> 
+plot_data <- dt |> 
   mutate(!!question_var := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |> 
   count(!!sym(question_var), .drop = FALSE) |> 
   mutate(prop = round(n / sum(n) * 100))
 
 # Plot
-dosing_plot <- ggplot(dosing_plot_data, aes(x = .data[[question_var]], y = n)) +
+dosing_plot <- ggplot(plot_data, aes(x = .data[[question_var]], y = n)) +
   geom_col(fill = "steelblue4") +
   geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
   ggtitle(str_wrap(title_string, 65)) +
   xlab("") +
-  ylab(paste0("Number of Respondents (Total = ", sum(dosing_plot_data$n), ")")) +
+  ylab(paste0("Number of Respondents (Total = ", sum(plot_data$n), ")")) +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
                               margin = margin(0, 140, 0, 0)),
@@ -63,6 +63,10 @@ dosing_plot <- ggplot(dosing_plot_data, aes(x = .data[[question_var]], y = n)) +
     axis.line = element_line()
   ) +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
+  scale_y_continuous(
+    breaks = seq(0, max(plot_data$n), by = 1),
+    limits = c(0, max(plot_data$n + 1))
+  ) +
   coord_flip()
 
 dosing_plot
