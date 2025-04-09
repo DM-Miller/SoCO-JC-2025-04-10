@@ -307,7 +307,8 @@ main.content {
   flex-shrink: 1;  // Allow shrinking
   flex-grow: 0;
   max-width: 100%; // Prevent cutoff
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min_width: 200px;
+  overflow: visible;
+  text-overflow: unset;
   white-space: nowrap;
 }
