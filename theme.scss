@@ -90,7 +90,7 @@ body {
 .navbar > .container-sm,
 .navbar > .container,
 .navbar > .container-fluid {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -265,7 +265,8 @@ main.content {
 }
 
 .navbar .navbar-brand {
-  margin-right: 2rem;
+  margin-right: 0rem;
+  margin-left: -1rem;
   white-space: nowrap;
 }
 
