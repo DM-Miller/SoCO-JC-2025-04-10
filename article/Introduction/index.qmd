@@ -27,6 +27,18 @@ include-in-header:
           margin: 2rem auto;
           max-width: 1000px;
         }
+        
+        .fade-in-plot {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .fade-in-plot.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
       </style>
 format:
   html:
@@ -38,8 +50,77 @@ toc: false
 
 ## Shailender/Paul
 
+<!-- Button 1 -->
+<button id="show-plot-btn-1" class="btn btn-primary" style="margin-bottom: 1rem;">
+  Efficacy of ICI in MCC
+</button>
+
+<!-- Plot 1 (initially hidden) -->
+<div id="hidden-plot-1" class="fade-in-plot" style="display: none;">
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+source(here::here("scripts/Efficacy of ICI in MCC.R"))
 
 
-<div class="nav-buttons">
-  <a href="../Table_1/" class="btn btn-primary">Next →</a>
+mcc_systemic_1L_avg_gt 
+
+```
+
 </div>
+
+<!-- Button 2 --> 
+
+<button id="show-plot-btn-2" class="btn btn-primary" style="margin: 2rem 0 1rem;"> 
+   Efficacy of ICI in MCC By N 
+</button> 
+
+<!-- Plot 2 (initially hidden) --> 
+<div id="hidden-plot-2" class="fade-in-plot" style="display: none;"> 
+
+```{r} 
+#| echo: false 
+#| warning: false 
+#| message: false 
+source(here::here("scripts/Efficacy of ICI in MCC.R")) 
+mcc_systemic_1L_n_gt 
+``` 
+
+</div> 
+
+<!-- Navigation Button --> 
+<div class="nav-buttons"> <a href="../Table_1/" class="btn btn-primary">Next →</a> 
+
+</div> 
+
+<!-- JavaScript to handle scroll and click -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Scroll-based fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-plot').forEach(el => observer.observe(el));
+
+    // Click-to-show functionality
+    document.getElementById('show-plot-btn-1').addEventListener('click', function () {
+      document.getElementById('hidden-plot-1').style.display = 'block';
+      this.style.display = 'none';
+    });
+
+    document.getElementById('show-plot-btn-2').addEventListener('click', function () {
+      document.getElementById('hidden-plot-2').style.display = 'block';
+      this.style.display = 'none';
+    });
+  });
+</script>
+

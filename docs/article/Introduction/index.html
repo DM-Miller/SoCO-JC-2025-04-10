@@ -91,6 +91,18 @@ ul.task-list li input[type="checkbox"] {
     margin: 2rem auto;
     max-width: 1000px;
   }
+
+  .fade-in-plot {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .fade-in-plot.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 </style>
 
 
@@ -169,9 +181,1121 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="shailenderpaul" class="level2">
 <h2 class="anchored" data-anchor-id="shailenderpaul">Shailender/Paul</h2>
+<!-- Button 1 -->
+<button id="show-plot-btn-1" class="btn btn-primary" style="margin-bottom: 1rem;">
+Efficacy of ICI in MCC
+</button>
+<!-- Plot 1 (initially hidden) -->
+<div id="hidden-plot-1" class="fade-in-plot" style="display: none;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="oaksglkwfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oaksglkwfh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#oaksglkwfh thead, #oaksglkwfh tbody, #oaksglkwfh tfoot, #oaksglkwfh tr, #oaksglkwfh td, #oaksglkwfh th {
+  border-style: none;
+}
+
+#oaksglkwfh p {
+  margin: 0;
+  padding: 0;
+}
+
+#oaksglkwfh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#oaksglkwfh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#oaksglkwfh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#oaksglkwfh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#oaksglkwfh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#oaksglkwfh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#oaksglkwfh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#oaksglkwfh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#oaksglkwfh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#oaksglkwfh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#oaksglkwfh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#oaksglkwfh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#oaksglkwfh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#oaksglkwfh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#oaksglkwfh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oaksglkwfh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#oaksglkwfh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#oaksglkwfh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#oaksglkwfh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oaksglkwfh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#oaksglkwfh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oaksglkwfh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#oaksglkwfh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oaksglkwfh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oaksglkwfh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#oaksglkwfh .gt_left {
+  text-align: left;
+}
+
+#oaksglkwfh .gt_center {
+  text-align: center;
+}
+
+#oaksglkwfh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#oaksglkwfh .gt_font_normal {
+  font-weight: normal;
+}
+
+#oaksglkwfh .gt_font_bold {
+  font-weight: bold;
+}
+
+#oaksglkwfh .gt_font_italic {
+  font-style: italic;
+}
+
+#oaksglkwfh .gt_super {
+  font-size: 65%;
+}
+
+#oaksglkwfh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#oaksglkwfh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#oaksglkwfh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#oaksglkwfh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#oaksglkwfh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#oaksglkwfh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#oaksglkwfh .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#oaksglkwfh .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#oaksglkwfh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="7" class="gt_heading gt_title gt_font_normal"><strong>Immunotherapy for Merkel Cell Carcinoma</strong></th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border"></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Therapy" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Therapy</strong></th>
+<th id="Study" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Study</strong></th>
+<th id="Tx-Line" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Line of Therapy</strong></th>
+<th id="N" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong></th>
+<th id="Objective-Response" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Objective Response (%)</strong></th>
+<th id="Median-PFS" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Median PFS (months)</strong></th>
+<th id="Median-OS" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Median OS (months)</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy">Avelumab</td>
+<td class="gt_row gt_left" headers="Study">Javelin</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">116</td>
+<td class="gt_row gt_center" headers="Objective Response">40</td>
+<td class="gt_row gt_center" headers="Median PFS">4.1</td>
+<td class="gt_row gt_center" headers="Median OS">20.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Therapy">Pembrolizumab</td>
+<td class="gt_row gt_left" headers="Study">CITN-09</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">50</td>
+<td class="gt_row gt_center" headers="Objective Response">58</td>
+<td class="gt_row gt_center" headers="Median PFS">16.8</td>
+<td class="gt_row gt_center" headers="Median OS">NR</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy">Nivolumab</td>
+<td class="gt_row gt_left" headers="Study">CheckMate-358</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">15</td>
+<td class="gt_row gt_center" headers="Objective Response">73</td>
+<td class="gt_row gt_center" headers="Median PFS">24.8</td>
+<td class="gt_row gt_center" headers="Median OS">NR</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Therapy">Nivolumab + Ipilimumab</td>
+<td class="gt_row gt_left" headers="Study">CheckMate-358</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">33</td>
+<td class="gt_row gt_center" headers="Objective Response">64</td>
+<td class="gt_row gt_center" headers="Median PFS">15.4</td>
+<td class="gt_row gt_center" headers="Median OS">35.58</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy">Nivolumab + Ipilimumab</td>
+<td class="gt_row gt_left" headers="Study">Moffitt IST</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">13</td>
+<td class="gt_row gt_center" headers="Objective Response">100</td>
+<td class="gt_row gt_center" headers="Median PFS">NR</td>
+<td class="gt_row gt_center" headers="Median OS">NR</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Therapy">Retifanlimab</td>
+<td class="gt_row gt_left" headers="Study">POD1UM-201</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">65</td>
+<td class="gt_row gt_center" headers="Objective Response">52</td>
+<td class="gt_row gt_center" headers="Median PFS">NA</td>
+<td class="gt_row gt_center" headers="Median OS">NA</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy" style="background-color: #C24641; color: #FFFFFF">Aggregate</td>
+<td class="gt_row gt_left" headers="Study" style="background-color: #C24641; color: #FFFFFF">Aggregate</td>
+<td class="gt_row gt_center" headers="Tx Line" style="background-color: #C24641; color: #FFFFFF">1</td>
+<td class="gt_row gt_center" headers="N" style="background-color: #C24641; color: #FFFFFF">292</td>
+<td class="gt_row gt_center" headers="Objective Response" style="background-color: #C24641; color: #FFFFFF">53</td>
+<td class="gt_row gt_center" headers="Median PFS" style="background-color: #C24641; color: #FFFFFF">NA</td>
+<td class="gt_row gt_center" headers="Median OS" style="background-color: #C24641; color: #FFFFFF">NA</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<!-- Button 2 -->
+<button id="show-plot-btn-2" class="btn btn-primary" style="margin: 2rem 0 1rem;">
+Efficacy of ICI in MCC By N
+</button>
+<!-- Plot 2 (initially hidden) -->
+<div id="hidden-plot-2" class="fade-in-plot" style="display: none;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="ddbnpdobms" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ddbnpdobms table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ddbnpdobms thead, #ddbnpdobms tbody, #ddbnpdobms tfoot, #ddbnpdobms tr, #ddbnpdobms td, #ddbnpdobms th {
+  border-style: none;
+}
+
+#ddbnpdobms p {
+  margin: 0;
+  padding: 0;
+}
+
+#ddbnpdobms .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ddbnpdobms .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ddbnpdobms .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ddbnpdobms .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ddbnpdobms .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ddbnpdobms .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ddbnpdobms .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ddbnpdobms .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ddbnpdobms .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ddbnpdobms .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ddbnpdobms .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ddbnpdobms .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ddbnpdobms .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ddbnpdobms .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ddbnpdobms .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddbnpdobms .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ddbnpdobms .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ddbnpdobms .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ddbnpdobms .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddbnpdobms .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ddbnpdobms .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddbnpdobms .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ddbnpdobms .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddbnpdobms .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ddbnpdobms .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ddbnpdobms .gt_left {
+  text-align: left;
+}
+
+#ddbnpdobms .gt_center {
+  text-align: center;
+}
+
+#ddbnpdobms .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ddbnpdobms .gt_font_normal {
+  font-weight: normal;
+}
+
+#ddbnpdobms .gt_font_bold {
+  font-weight: bold;
+}
+
+#ddbnpdobms .gt_font_italic {
+  font-style: italic;
+}
+
+#ddbnpdobms .gt_super {
+  font-size: 65%;
+}
+
+#ddbnpdobms .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ddbnpdobms .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ddbnpdobms .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ddbnpdobms .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ddbnpdobms .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ddbnpdobms .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ddbnpdobms .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ddbnpdobms .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ddbnpdobms div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="7" class="gt_heading gt_title gt_font_normal"><strong>Immunotherapy for Merkel Cell Carcinoma</strong></th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border"></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="Therapy" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Therapy</strong></th>
+<th id="Study" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Study</strong></th>
+<th id="Tx-Line" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Line of Therapy</strong></th>
+<th id="N" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N</strong></th>
+<th id="Objective-Response" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Objective Response (%)</strong></th>
+<th id="Median-PFS" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Median PFS (months)</strong></th>
+<th id="Median-OS" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Median OS (months)</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy">Nivolumab + Ipilimumab</td>
+<td class="gt_row gt_left" headers="Study">Moffitt IST</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">13</td>
+<td class="gt_row gt_center" headers="Objective Response">100</td>
+<td class="gt_row gt_center" headers="Median PFS">NR</td>
+<td class="gt_row gt_center" headers="Median OS">NR</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Therapy">Nivolumab</td>
+<td class="gt_row gt_left" headers="Study">CheckMate-358</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">15</td>
+<td class="gt_row gt_center" headers="Objective Response">73</td>
+<td class="gt_row gt_center" headers="Median PFS">24.8</td>
+<td class="gt_row gt_center" headers="Median OS">NR</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy">Nivolumab + Ipilimumab</td>
+<td class="gt_row gt_left" headers="Study">CheckMate-358</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">33</td>
+<td class="gt_row gt_center" headers="Objective Response">64</td>
+<td class="gt_row gt_center" headers="Median PFS">15.4</td>
+<td class="gt_row gt_center" headers="Median OS">35.58</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Therapy">Pembrolizumab</td>
+<td class="gt_row gt_left" headers="Study">CITN-09</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">50</td>
+<td class="gt_row gt_center" headers="Objective Response">58</td>
+<td class="gt_row gt_center" headers="Median PFS">16.8</td>
+<td class="gt_row gt_center" headers="Median OS">NR</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Therapy">Retifanlimab</td>
+<td class="gt_row gt_left" headers="Study">POD1UM-201</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">65</td>
+<td class="gt_row gt_center" headers="Objective Response">52</td>
+<td class="gt_row gt_center" headers="Median PFS">NA</td>
+<td class="gt_row gt_center" headers="Median OS">NA</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Therapy">Avelumab</td>
+<td class="gt_row gt_left" headers="Study">Javelin</td>
+<td class="gt_row gt_center" headers="Tx Line">1</td>
+<td class="gt_row gt_center" headers="N">116</td>
+<td class="gt_row gt_center" headers="Objective Response">40</td>
+<td class="gt_row gt_center" headers="Median PFS">4.1</td>
+<td class="gt_row gt_center" headers="Median OS">20.3</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Button -->
 <div class="nav-buttons">
 <p><a href="../Table_1/" class="btn btn-primary">Next →</a></p>
 </div>
+<!-- JavaScript to handle scroll and click -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Scroll-based fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-plot').forEach(el => observer.observe(el));
+
+    // Click-to-show functionality
+    document.getElementById('show-plot-btn-1').addEventListener('click', function () {
+      document.getElementById('hidden-plot-1').style.display = 'block';
+      this.style.display = 'none';
+    });
+
+    document.getElementById('show-plot-btn-2').addEventListener('click', function () {
+      document.getElementById('hidden-plot-2').style.display = 'block';
+      this.style.display = 'none';
+    });
+  });
+</script>
 
 
 </section>
