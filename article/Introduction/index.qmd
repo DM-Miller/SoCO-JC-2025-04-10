@@ -97,7 +97,13 @@ mcc_systemic_1L_n_gt
 
 :::
 
+::: {.callout-note appearance="minimal" collapse="true"}
 
+## NCCN Guidelines for Systemic Therapy
+
+![](../../img/NCCN_systemic_therapy.png)
+
+:::
 
 
 

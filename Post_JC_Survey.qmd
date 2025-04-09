@@ -65,6 +65,14 @@ mgmt_2_plot
 
 ::: {.callout-note appearance="minimal" collapse="true"}
 
+## NCCN Guidelines for Systemic Therapy
+
+![](img/NCCN_systemic_therapy.png)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
 ## Checkmate 067
 
 ![](img/checkmate_067.png)
