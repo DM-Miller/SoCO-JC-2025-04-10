@@ -40,6 +40,29 @@ toc: false
 
 
 
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## NCCN Guidelines for Systemic Therapy
+
+![](img/NCCN_systemic_therapy.png)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Checkmate 067
+
+![](img/checkmate_067.png)
+
+:::
+
+::: {.callout-note appearance="minimal" collapse="true"}
+
+## Checkmate-8HW
+
+![](img/checkmate-8HW.png)
+:::
+
 <div class="nav-buttons">
   <a href="../Table_4/" class="btn btn-primary">← Previous</a>
 </div>

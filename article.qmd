@@ -81,6 +81,7 @@ listing:
       - article/Figure_2a
       - article/Figure_2b
       - article/Table_4
+      - article/Discussion
     type: default
     sort: "none"
 ---
@@ -119,4 +120,8 @@ listing:
 
 :::{#Table_4}
 :::
+
+:::{#Discussion}
+:::
+
 </div>
