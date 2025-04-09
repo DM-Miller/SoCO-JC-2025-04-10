@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5d9244b8c8e9eadc7b06b8c2444643a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-246eb4a846fe5ef9be2e81fec169f3b9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 style="position: absolute; left: -9999px;" class="title display-7">
-Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
+Society of Cutaneous Oncology Journal Club April 10, 2025
 </h1></header>
 
 
@@ -159,7 +159,6 @@ Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
     animation-delay: 0.5s;
   }
 
-
   @keyframes fadeSlideDown {
     from {
       opacity: 0;
@@ -171,45 +170,48 @@ Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
     }
   }
 
-
   .scroll-content {
     margin-top: 100vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem 0.75rem;
-    max-width: min(95vw, 1200px);
+    padding: 2rem 1rem;
+    max-width: min(95vw, 1000px);
     background: white;
-    border-radius: 0.75rem 0.75rem 0 0; 
+    border-radius: 0.75rem 0.75rem 0 0;
     box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
     position: relative;
     z-index: 2;
     font-size: 2rem;
     line-height: 1.6;
-    text-align: center;  /* NEW */
-    }
-
- /* Fade-in effect for listings */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
+    text-align: center;
   }
 
-  .fade-in.visible {
+  /* Fade-in animation */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-section.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
+  ol {
+    text-align: left;
+    padding-left: 1.25rem;
+  }
+
   @media (max-width: 600px) {
     .scroll-content {
       padding: 2rem 1rem;
-      max-width: 95vw;
     }
+
     .hero-title {
       font-size: clamp(1.8rem, 6vw, 2.5rem);
     }
   }
-  
 </style>
 <div id="hero-bg" class="hero-container">
 
@@ -220,16 +222,15 @@ Society of Cutaneous Oncology <br>Journal Club<br>April 10, 2025
 <div class="scroll-content">
 <!-- Hidden heading for accessibility -->
 
-<div id="overview" class="fade-in">
-<section id="agenda" class="level1">
-<h1>Agenda</h1>
-<div style="display: inline-block; text-align: left;">
+<h2 style="text-align: center;" class="anchored">
+Agenda
+</h2>
 <ol>
-<li>
-Brief Introductions
+<li class="fade-section">
+<strong>Brief Introductions</strong>
 <ol type="a">
 <li>
-Academic participants please put following information in the chat:
+Academic participants please put the following in the chat:
 <ul>
 <li>
 <span style="color: #3366cc;">Name, affiliated hospital/institution, role</span>
@@ -246,28 +247,25 @@ BMS
 </li>
 </ol>
 </li>
-<li>
-4th International MCC Symposium <img src="img/mcc_4.jpg" alt="MCC Symposium image" style="max-width: 100%; height: auto; margin-top: 1rem;">
+<li class="fade-section">
+<strong>4th International MCC Symposium</strong><br> <img src="img/mcc_4.jpg" alt="MCC Symposium image" style="max-width: 100%; height: auto; margin-top: 1rem;">
 </li>
-<li>
+<li class="fade-section">
 Perspectives on the Science
 </li>
-<li>
+<li class="fade-section">
 SoCo JC Timeline
 </li>
-<li>
+<li class="fade-section">
 Pre-JC Survey
 </li>
-<li>
+<li class="fade-section">
 Main Paper
 </li>
-<li>
+<li class="fade-section">
 Post-JC Survey
 </li>
 </ol>
-</div>
-</section>
-</div>
 </div>
 <script>
   // Scroll-based fade of hero banner
@@ -281,30 +279,18 @@ Post-JC Survey
     title.style.opacity = `${1 - fadeRatio}`;
   });
 
-  // Fade-in animation for sections + anchor scroll smoothing
+  // Fade-in animation for agenda sections
   document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in");
+    const sections = document.querySelectorAll(".fade-section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
         }
       });
-    });
-    elements.forEach(el => observer.observe(el));
+    }, { threshold: 0.5 });
 
-    // Smooth scroll to anchor links
-    if (window.location.hash) {
-      const target = document.querySelector(window.location.hash);
-      if (target) {
-        setTimeout(() => {
-          window.scrollTo({
-            top: target.getBoundingClientRect().top + window.scrollY - 100,
-            behavior: 'smooth'
-          });
-        }, 600);
-      }
-    }
+    sections.forEach(section => observer.observe(section));
   });
 </script>
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="position:fixed; bottom:2rem; right:2rem; background:#333; color:white; padding:0.75rem 1rem; border:none; border-radius:999px; cursor:pointer; z-index:10;">

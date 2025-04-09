@@ -256,3 +256,38 @@ main.content {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* === Navbar Enhancements for Spacing & No-Wrap === */
+
+.navbar .container-fluid {
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+}
+
+.navbar .navbar-brand {
+  margin-right: 2rem;
+  white-space: nowrap;
+}
+
+.navbar-nav {
+  gap: 1.5rem;
+  flex-wrap: nowrap !important;
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Responsive tuning for smaller screens */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .navbar-nav {
+    font-size: 0.9rem;
+  }
+}
