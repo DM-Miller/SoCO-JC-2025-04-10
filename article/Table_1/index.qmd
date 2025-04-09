@@ -30,7 +30,7 @@ toc: false
 ---
 
 
-## Ade Adamson/Sonia
+## Ade/Sonia
 
 ![](../../img/table_1.jpg)
 
