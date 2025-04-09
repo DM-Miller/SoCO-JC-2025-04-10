@@ -1,25 +1,28 @@
 # Load the processed survey dataset
-dt2 <- open_recent_file(
+dt <- open_recent_file(
   directory = file.path(
     files_dir,
     "Post_JC_survey_processed"
   )
 )
 
-# Standardize response categories
-dt2 <- dt2 |> 
-  mutate(change_practice_yn = case_when(
-    str_detect(change_practice_yn, "Yes") ~ "Yes",
-    str_detect(change_practice_yn, "No Not Persuasive Enough") ~ "No – Not persuasive enough",
-    str_detect(change_practice_yn, "No My Practice Is Already Aligned") ~ "No – My practice is already aligned",
-    str_detect(change_practice_yn, "Topic Not Relevant To My Trade") ~ "Topic not relevant to my trade",
-    TRUE ~ change_practice_yn  # Keep as is if no match is found
-  ))
+# Define variable and question title
+question_var <- "change_practice_yn"
+question_title <- "Will this paper change your practice?"
 
-# Replace NA values with "Not Answered"
-dt2$change_practice_yn[is.na(dt2$change_practice_yn)] <- "Not Answered"
+# Recode responses to match form labels
+dt[[question_var]] <- recode(
+  dt[[question_var]],
+  "No Not Persuasive Enough" = "No – Not persuasive enough",
+  "No My Practice Is Already Aligned" = "No – My practice is already aligned",
+  "Topic Not Relevant To My Trade" = "Topic not relevant to my trade",
+  "Yes" = "Yes"
+)
 
-# Define the correct order of response categories
+# Replace NA or blank with "Not Answered"
+dt[[question_var]][is.na(dt[[question_var]]) | dt[[question_var]] == ""] <- "Not Answered"
+
+# Define ordered levels from the form
 ordered_levels <- c(
   "Yes",
   "No – My practice is already aligned",
@@ -28,38 +31,41 @@ ordered_levels <- c(
   "Not Answered"
 )
 
-# Ensure factor levels are set before counting
-practice <- dt2 |> 
-  count(change_practice_yn) |> 
-  mutate(prop = round(n / sum(n) * 100)) |> 
-  mutate(change_practice_yn = factor(change_practice_yn, levels = ordered_levels, ordered = TRUE))
+# Prepare plot data
+plot_data <- dt |> 
+  mutate(!!question_var := factor(.data[[question_var]], levels = ordered_levels, ordered = TRUE)) |> 
+  count(.data[[question_var]], name = "n", .drop = FALSE) |> 
+  mutate(prop = round(n / sum(n) * 100))
 
-# Generate plot
-practice_plot <- practice |> 
-  ggplot(aes(x = change_practice_yn, y = n)) + 
-  geom_col(fill = "steelblue4") + 
+# Generate the plot
+change_practice_plot <- ggplot(
+  plot_data,
+  aes(x = .data[[question_var]], y = n)
+) +
+  geom_col(fill = "steelblue4") +
   geom_text(aes(label = paste0(prop, "%")), hjust = -0.1) +
-  ggtitle(str_wrap("Will this paper change your practice?", 50)) +
+  ggtitle(str_wrap(question_title, width = 60)) +
   xlab("") +
-  ylab(paste0("Number of Respondents (Total = ", sum(practice$n), ")")) +
-  theme_minimal() +
+  ylab(paste0("Number of Respondents (Total = ", sum(plot_data$n), ")")) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 24),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 20,
+                              margin = margin(0, 130, 0, 0)),
     axis.title.x = element_text(face = "bold", size = 16),
     axis.text.x = element_text(face = "bold", size = 14),
     axis.title.y = element_text(face = "bold", size = 16),
-    axis.text.y = element_text(face = "bold", size = 16),
-    panel.grid.major = element_blank(), 
+    axis.text.y = element_text(face = "bold", size = 14),
+    panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
     axis.line = element_line(),
-    plot.margin = margin(t = 0.2, r = 0, b = 0.2, l = 0, "cm")
+    plot.margin = margin(0.2, 0, 0.2, 0, "cm")
   ) +
-  scale_x_discrete(labels = function(x) str_wrap(x, width = 20)) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 30)) +
   scale_y_continuous(
-    breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1)))),
-    limits = c(0, max(practice$n + 0.2))
+    breaks = seq(0, max(plot_data$n), by = 1),
+    limits = c(0, max(plot_data$n + 1))
   ) +
   coord_flip()
 
 # Print the plot
-practice_plot
+change_practice_plot
