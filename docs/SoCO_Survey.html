@@ -521,6 +521,10 @@ Pre Journal Club Survey
     opacity: 0;
     animation: fadeSlideDown 1s ease-out forwards;
     animation-delay: 0.5s;
+    width: 100%;                /* ensure full width */
+    max-width: 1200px;          /* match scroll-content */
+    padding: 0 1rem;            /* prevent edge clipping */
+    box-sizing: border-box;
   }
 
 
@@ -541,13 +545,17 @@ Pre Journal Club Survey
   margin-left: auto;
   margin-right: auto;
   padding: 2rem 0.75rem;
-  max-width: min(95vw, 1200px);
+  max-width: 1200px;
   background: white;
   border-radius: 0.75rem 0.75rem 0 0; 
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 2;
+  font-size: 2rem;
+  line-height: 1.6;
+  text-align: center;
 }
+
  /* Fade-in effect for listings */
   .fade-in {
     opacity: 0;
