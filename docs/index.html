@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b33d484b01318ed548b68aa47f08d2f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2616eaca79901512069ce5d6d26e5090.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -174,7 +174,7 @@ Society of Cutaneous Oncology Journal Club April 10, 2025
     margin-top: 100vh;
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     max-width: min(95vw, 1000px);
     background: white;
     border-radius: 0.75rem 0.75rem 0 0;
@@ -184,6 +184,14 @@ Society of Cutaneous Oncology Journal Club April 10, 2025
     font-size: 2rem;
     line-height: 1.6;
     text-align: center;
+  }
+
+  .scroll-content > ol > li {
+    margin-bottom: 1.5rem; /* adds space between 1. and 2. */
+  }
+
+  .scroll-content > ol > li.fade-section {
+    margin-bottom: 1.5rem;
   }
 
   /* Fade-in animation */
@@ -288,7 +296,7 @@ Post-JC Survey
           entry.target.classList.add("visible");
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.8 });
 
     sections.forEach(section => observer.observe(section));
   });

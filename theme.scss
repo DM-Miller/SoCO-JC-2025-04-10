@@ -292,3 +292,22 @@ main.content {
     font-size: 0.9rem;
   }
 }
+
+/* Ensure navbar brand and links distribute space properly */
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+}
+
+/* Let the brand use more space if needed */
+.navbar .navbar-brand {
+  flex-shrink: 1;  // Allow shrinking
+  flex-grow: 0;
+  max-width: 100%; // Prevent cutoff
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
